@@ -1,0 +1,76 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+ <div class="main-content Dashbord">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="dashbord-order-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 dashbord">
+                <div class="col-sm-3 secondry-bg dashbord-menu">
+                    <!-- <ul class="dashbord-tab">
+                        <a href="#"><li>My Account</li></a>
+                        <a href="#"><li>Settings</li></a>
+                        <a href="#"><li>My Wishlist</li></a>
+                        <a href="#"><li class="active-d">My Order</li></a>
+                        <a href="#"><li>Personnel Info</li></a>
+                        <a href="#"><li>Order Details</li></a>
+                    </ul> -->
+                    {% include 'web/dashboard-side.html.j2' %}
+                </div>
+                <div class="col-sm-9 dashbord-content cart-sec order-list order">
+                    <div class="col-xs-12 section-tilte no-gutter">
+                      <h3 class="title-head col-xs-9 no-gutter"><span>My</span> Order Lists</h3>
+                      <h4 class="text text-right no-gutter col-xs-3"><a href="#" class="fa fa-phone">Call Us</a></h4>
+                    </div>
+                    {% if orders|length==0 %}
+                      <div class="col-xs-12 no-gutter cart-box">
+                        <p>You have no orders.</p>
+                      </div>
+                    {% endif %}
+                    {% for order in orders %}
+                      <div class="col-xs-12 no-gutter cart-box">
+                      <div class="col-sm-12 col-xs-12 no-gutter cart-sub-boxup">
+                        <div class="col-sm-7 col-xs-6">
+                            <p class="text">Order id : <span>{{order.id}}</span></p>
+                        </div>
+                        <div class="col-sm-5 text-right col-xs-6">
+                          <p class="text">Status : {{order.get_status_display()}}</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 no-gutter">
+                        <div class="col-sm-7">
+                            <div class="cart-image">
+                                <img src="/media/{{order.plant_details[0].plant.image}}" alt=""/>
+                            </div>
+                            <div class="cart-name">
+                                <!-- <a class="link" href="#"><p class="text"><span>Loreum Ipsum Ajfklg.</span></p></a> -->
+                                <p class="text">Price : <i class="fa fa-inr"></i> {{order.amount}}</p>
+                                <p class="text">No. Of Item : {{order.plant_details|length}}</p>
+                                <a class="link-o" href="{{url('my-order-details',args=[order.id])}}">View Detail</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <p class="text">Place On : {{order.placed_on.strftime('%d %b, %Y')}} </p>
+                            <p class="text">Delivery On : 01/02/2016</p>
+                             <a href="{{url('my-order-details',args=[order.id])}}" class="link"><p class="text"><span>Track Order</span></p></a>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% endblock %}

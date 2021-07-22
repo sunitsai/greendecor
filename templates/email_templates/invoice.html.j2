@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///Users/user/Pictures/invoice.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>{{title}}</title>
+
+    <style>
+    .invoice-box{
+        max-width:800px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+    }
+
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+    }
+
+    .invoice-box table tr td:nth-child(2){
+        text-align:right;
+    }
+
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.top table td.title{
+        font-size:45px;
+        line-height:45px;
+        color:#333;
+    }
+
+    .invoice-box table tr.information table td{
+        padding-bottom:40px;
+    }
+
+    .invoice-box table tr.heading td{
+        background:#eee;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+
+      .invoice-box table tr.footer td{
+        background:#f5f5f5;
+        border-bottom:1px solid #ddd;
+        font-size: 12px;
+        border-top: 1px solid #6c6c6c;
+
+    }
+
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.item td{
+        border-bottom:1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2){
+        border-top:2px solid #eee;
+        font-weight:bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+
+              <table cellpadding="0" cellspacing="0">
+            <tbody><tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tbody><tr>
+                            <td class="title">
+                                <img src="https://www.greendecor.in/static/web/img/logo.png" style="width:100%; max-width:150px;">
+                                <br>
+                               <p style="font-size:15px;"> Green Panache Retail Solutions Pvt. Ltd.</p>
+                            </td>
+                            <td>
+                                Invoice #: {{booking.id}}<br>
+                                Invoice Date: {{booking.placed_on.strftime('%d %b, %Y')}}<br>
+                                *This is a computer generated Invoice
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tbody><tr>
+                            <td>
+                               Shipping Address <br>
+                                {{booking.shipping_address1}} {{booking.shipping_address2}}<br>
+                                {{booking.shipping_city}} ({{booking.shipping_state}})<br>
+                                {{booking.shipping_pincode}}
+                            </td>
+
+                            <td>
+                               Buyer Details<br>
+                                {{booking.shipping_name}}<br>
+                                {{booking.shipping_phone}}<br>
+                                {{booking.shipping_email}}
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+
+                <td>
+                    {{booking.get_payment_type_display()}}
+                </td>
+            </tr>
+
+            <tr style="height:30px;"></tr>
+
+
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
+                <td>
+                    Price
+                </td>
+            </tr>
+            {% for it in item %}
+              <tr class="item">
+                    <td>
+                        {{it.plant.name}}<br>
+                        Quantity: {{it.quantity}}
+                    </td>
+
+                    <td>
+                        ₹ {{it.quantity*it.price}}
+                    </td>
+                </tr>
+              {% endfor %}
+              {% if booking.is_gift==True %}
+                <tr class="item">
+                    <td>
+                        Gift Wrap
+                    </td>
+
+                    <td>
+                        ₹ {{25*item|length}}
+                    </td>
+                </tr>
+              {% endif %}
+              <tr class="item">
+                  <td>
+                      Coupon Discount
+                  </td>
+                  <td>
+                      ₹ {{booking.coupon_discount}}
+                  </td>
+              </tr>
+
+              <tr class="item">
+                  <td>
+                      Delivery Charge
+                  </td>
+                  <td>
+                      ₹ {{booking.delivery_charge}}
+                  </td>
+              </tr>
+
+
+
+            <tr class="total">
+                <td></td>
+                <td>
+                   Total: ₹ {{booking.amount}}
+                </td>
+            </tr>
+
+            <tr style="height:30px;"></tr>
+
+            <tr class="total">
+
+                <td>
+                 Regards, </br> Team Green Decor
+                </br>+91-9953 572 573</br>
+                info@greendecor.in
+                </td>
+
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    If you have any query or feedback, please contact: info@greendecor.in , Helpline No.-<a href="tel:09953572573">+919953572573</a><br><br>
+
+
+
+                </td>
+            </tr>
+
+            <tr style="height:30px;"></tr>
+
+
+
+
+            <tr class="footer">
+                <td colspan="3">
+
+                Disclaimer- goods once sold will not be refunded, however you may request a return for exchange in case of dissatisfaction. Remember plants are natural species and need specific maintenance and upkeep. We at Green Decor attempt to give you the best information to preserve it. But it may still wither depending upon various factors which are out of our control. Please be advised to take care for long life of the plants.
+                <br>
+                <p>Terms and Conditions*<br>
+	*Payment 100% in advance<br>
+	*Subject to Delhi Jurisdiction Only<br></p>
+
+</td>
+
+            </tr>
+        </tbody></table>
+    </div>
+
+
+</body></html>

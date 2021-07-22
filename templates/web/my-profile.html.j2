@@ -1,0 +1,79 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+ <div class="main-content inner profile">
+      <!-- div class main content start-->
+<section class="scroll-first section-padding" id="my-profile">
+    <div class="container">
+        <div class="col-sm-12 dashbord">
+            <div class="col-sm-3 secondry-bg dashbord-menu">
+                    {% include 'web/dashboard-side.html.j2' %}
+                </div>
+                <div class="col-sm-7 col-xs-12 dashbord-content">
+                <div class="col-xs-12 text-left">
+                    <h3 class="title-head"><span>My </span> Profile</h3>
+                </div>
+                <div class="col-sm-12 my-profile forgot-pwd">
+                    <form method="post" action="">
+                      <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                       <div class="col-md-3 col-xs-12 text-center p-f-label">Email :</div>
+                       <div class="col-md-9 col-xs-12">
+                         <input class="input" type="email" name="email" readonly="true" placeholder="Enter Your Email" value="{{request.user.email}}">
+                        </div>
+                        
+                        <div class="col-md-3 col-xs-12 text-center p-f-label">Name :</div>
+                         <div class="col-md-9 col-xs-12">
+                          <!-- <input class="input" name="name" type="text" placeholder="Name" value=""> -->
+                          {{form.name}}
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 text-center p-f-label">
+                             Mobile :
+                        </div>
+                         <div class="col-md-9 col-xs-12">
+                          {{form.mobile}}
+                            <!-- <input class="input" name="mobile" type="number" placeholder="Mobile" value=""> -->
+                        </div>
+                        
+                        <div class="col-md-3 col-xs-12 text-center p-f-label">Your Birthday :</div>
+                        
+                        <div class="col-md-9 col-xs-12">
+
+                            <input class="input" name="date_of_birth" value="{{request.user.userprofile.date_of_birth}}" type="Date" placeholder="Birth Date">
+                        </div>
+                        
+                        {% if form.errors %}
+                          <div class="col-xs-12">
+                              {%for error in form.errors.__all__%}
+                              <p style="color:red;">{{error}}</p>
+                              {%endfor%}
+                          </div>
+                        {%endif%}
+                        <div class="col-xs-12">
+                            <input class="submit" type="submit" value="Update">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+</div>
+
+<style>
+    
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+</style>
+{% endblock %}

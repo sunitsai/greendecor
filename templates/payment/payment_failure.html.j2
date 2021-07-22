@@ -1,0 +1,39 @@
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+<div class="main-content inner success-page">
+      <!-- div class main content start-->
+<section class="scroll-first section-padding" id="failure">
+    <div class="container">
+        <div class="col-sm-12 dashbord success-page failure-page">
+                <div class="col-sm-10 col-centered dashbord-content">
+                <div class="col-xs-12 success-content">
+                <div class="col-sm-12 text-center">
+                    <h4 class="title"><i class="fa fa-times"></i> Transaction Interrupt For</h4>
+                    <h4 class="subtitle">Your Order id : <span>  {{booking.id}}</span></h4>
+                </div>
+		{% if request.user.is_authenticated %}
+                <div class="col-sm-5 col-xs-12 text-center">
+                    <a class="button large" href="#">Continue Payment<i class="fa fa-angle-right"></i></a>
+                </div>
+                    <div class="col-sm-1 col-xs-12 text-center margin-top-20">
+                      <p class="title">Or</p>
+                    </div>
+		            <div class="col-sm-6 col-xs-12 text-center">
+                    <a class="button large" href="{{url('dashboard')}}">Go To Dashbord <i class="fa fa-angle-right"></i></a>
+                </div>
+		{% else  %}
+		            <div class="col-sm-12 col-xs-12 text-center">
+                    <a class="button large" href="#">Continue Payment<i class="fa fa-angle-right"></i></a>
+                </div>
+		{% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+</div>
+{% endblock %}

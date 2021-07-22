@@ -1,0 +1,24 @@
+<div class="col-md-3">
+  <div class="card product-card" style="height:309px">
+      <div class="slider-image">
+        <a href="{{ url('plant_details', args=[plant.slug]) }}">
+          {% if plant.thumbnail%}
+            <img src="/media/{{plant.thumbnail}}" alt="{{plant.thumbnail.alt}}" title="{{plant.thumbnail.title}}">
+          {% else %}
+            <img src="">
+          {% endif %}
+        </a>
+      </div>
+      <div class="sale-new">
+              <h6 class="text">New</h6>
+      </div>
+      <div class="heart">
+          <i class="fa fa-heart-o"></i>
+      </div>
+      <div class="content">
+          <h2 class="title">{{plant.name}}</h2>
+         
+          
+      </div>
+  </div>
+</div>

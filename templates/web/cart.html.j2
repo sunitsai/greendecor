@@ -1,0 +1,304 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+{% set totals = [0] %}
+{% set gift_wrap = false %}
+{% for single_item in cartItems %}
+    {% if totals.append(totals.pop()+ (single_item["price"]*single_item["quantity"])) %}{% endif %}
+{% endfor %}
+
+
+{% block custom_script_seo %}
+  <!-- Event snippet for Example conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-123456789/AbC-D_efG-h12_34-567',
+      'value': {{totals[0]}},
+      'currency': 'INR'
+    });
+  </script>
+{% endblock %}
+{% block main_content %}
+
+<script>
+
+  fbq('track', 'AddToCart');
+
+</script>
+
+
+
+<div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<!--Add to cart content start-->
+<section class="scroll-first section-padding" id="cart-deleviry-sec">
+<div class="container">
+    <div class="row">
+          <div class="col-md-12 cart-sec">
+          <div class="col-sm-8 add-cart">
+            <div class="col-sm-3 section-tilte">
+                <h3 class="title-head"><span>My</span>Cart</h3>
+            </div>
+            <div class="col-sm-9">
+                <div class="cart-tab cur-tab">
+                    <p class="title">Cart</p>
+                </div>
+                <div class="cart-tab middle-tab">
+                    <p class="title">Shipping </p>
+                </div>
+                <div class="cart-tab">
+                    <p class="title">Payment</p>
+                </div>
+            </div>
+
+
+              {% if cartItems|length >0 %}
+                <div class="col-xs-12 no-gutter cart-head cart-box">
+                    <div class="col-sm-6 col-xs-6">
+                        <h4 class="title">Product (<span id="cart_length">{{cartItems|length}}</span>)</h4>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 text-right">
+                        <!-- <h4 class="title">Total : <i class="fa fa-inr"></i></h4> -->
+                    </div>
+                </div>
+              {% endif %}
+
+              {% if cartItems|length <=0 %}
+                <div class="col-xs-12 cart-empty-box text-center">
+			  <div class="seprator1px"><i class="fa fa-shopping-bag"></i></div>
+			  			<h3 class="title">Your Shopping Bag is Empty</h3>
+
+			  	</div>
+              {% endif %}
+
+                {% for item in cartItems.all() %}
+                 <div id="cart_item_{{item.id}}" class="col-xs-12 cart-cdetail-box no-pad-reponsive">
+                        <div class="cart-image col-sm-4 no-pad-reponsive">
+                          <a href="{{ url('plant_details', args=[item.plant.slug]) }}">
+                           <img class="img-responsive" src="/media/{{item.plant.images.all()[0].image}}" alt="{{item.plant.images.all()[0].alt}}" title="{{item.plant.images.all()[0].title}}" />
+                           </a>
+                        </div>
+                        <div class="cart-content col-sm-8 no-pad-reponsive">
+                        <a href="{{ url('plant_details', args=[item.plant.slug]) }}">
+                        <h4 class="text">{{item.plant.name}}</h4>
+                        </a>
+                        <div class="col-md-7 add-to-cart quantity">
+                          <p class="title ">Qty :
+                              <a href="#" onclick="minus_quantity({{item.id}},{{item.price}})" class="minus"><i class="fa fa-minus"></i></a>
+                            <span id="item_{{item.id}}">{{item.quantity}}</span>
+                            <a href="#" Class="plus" onclick="add_quantity({{item.id}},{{item.price}})"><i class="fa fa-plus"></i></a>
+                          </p>
+                        </div>
+                        <div class="col-md-5">
+                        <p class="title">Price : <i class="fa fa-inr"></i> {{item.price}}</p>
+                        </div>
+                        <div class="col-xs-12 sub-cart-box">
+                                <a href="#" onclick="if(confirm('Are you sure?')){removeCartItem({{item.id}},{{item.price}})}" class="link">Remove from cart</a>
+                                <!-- <a href="#" class="link">Move to Wishlist</a> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="continue col-xs-12 text-center">
+                    <a href="{{url('search')}} " class="button hollow-btn">Continue Shopping <i class="fa fa-cart-plus"></i></a>
+                </div>
+
+            </div>
+
+<!--           -->
+              <div id="price_details" class="col-sm-4 total-cart">
+                <!-- <div class="col-xs-12 text-left cart-box">
+                        <h4 class="title">Options</h3>
+                    <div class="col-sm-7">
+
+                        <p class="title"><span>Coupons</span></p>
+                        {% if not request.user.is_authenticated %}
+                          <p class="sub-title">Log In to use account linked Coupons</p>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                          <input type="text" name="coupon_code" id="coupon_code" value="" placeholder="Coupon Code">
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-5">
+                       <a onclick="applyCoupon()" class="coupans button">Apply Coupons</a>
+                    </div>
+                </div> -->
+
+                <div class="col-xs-12 text-left cart-box gift-wrap">
+                    <div class="col-sm-10 col-xs-9">
+                        <p class="title"><span>Gift Wrap for Rs <i class="fa fa-inr"></i> 25</span>/product</p>
+                        <p class="sub-title">Send this product Gift Wrapped with Custom Message</p>
+                    </div>
+                    <div class="col-sm-2 col-xs-3">
+                        <input type="checkbox" id="gift_wrap" onclick="giftwrap()"  class="checkbox">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 text-left cart-box background_color">
+                    <div class="col-sm-12 col-xs-12">
+                        <p class="title">Free shipping after purchase of {{delivery_charge_config[0].max_amount}}</p>
+                        <p class="title">Coupon Code to get 10% Off: GOGREEN</p>
+                    </div>
+                </div>
+                <div id="summary_bar" class="col-xs-12 cart-price">
+                    <h4 class="title">Price Details :</h4>
+                        <p class="title">Price Total  <span><i class="fa fa-inr"></i><span id="total_item_amount"> {{totals[0]}}</span></span></p>
+                        {% if totals[0]<=delivery_charge_config[0].max_amount %}
+                          <p class="title" id="delivery_charge_bar">Delivery Charge  <span><i class="fa fa-inr"></i> {{delivery_charge_config[0].delivery_charge}}</span></p>
+                        {% endif %}
+                </div>
+                <div class="col-xs-12 cart-total-price">
+                        <p class="title">Total <span><i class="fa fa-inr"></i>&nbsp;<span id="total_amount"> {% if totals[0]<=delivery_charge_config[0].max_amount %}{{totals[0]+delivery_charge_config[0].delivery_charge}} {% else %}{{totals[0]}}{%endif%}</span></span></p>
+                </div>
+			<!--	<div class="col-xs-12 text-center">
+                        <p style="color: red;margin-top: 20px;">Deliveries are halted temporarily due to Lockdown.</p>
+                </div> -->
+				
+				   {% if cartItems|length >0 %}
+                <div class="continue col-xs-12 text-center">
+                  {# <a onclick="addURL()" class="button">PLACE ORDER <i class="fa fa-arrow-right"></i></a> #}
+
+                  {% if request.user.is_authenticated %}
+                    <a onclick="addURL()" class="button">PLACE ORDER <i class="fa fa-arrow-right"></i></a>
+                  {% endif %}
+                  {% if not request.user.is_authenticated %}
+                    <a onclick="addURL()" class="button hollow-btn">Checkout <i class="fa fa-arrow-right"></i></a>
+                  {% endif %}
+
+                </div>
+	 			{% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+    </section>
+    <!--add to cart content start-->
+</div>
+
+<style>
+     @media only screen and (max-width:768px){
+    .top-footer{
+        display: none;
+    }
+    }
+
+
+     @media only screen and (min-width:768px){
+    #navbar{
+       visibility: hidden !important;
+    }
+    }
+
+</style>
+
+
+{% endblock %}
+
+
+{% block custome_script %}
+  <script type="text/javascript">
+
+  function giftwrap(){
+    if($('#gift_wrap').prop("checked")){
+      var a = parseInt($('#total_amount').text())
+      $('#total_amount').text(a+{{25 * cartItems|length}});
+      $('.gift-wrap').append('<div id="gift_wrap_text" class="col-sm-9 col-xs-12"><input type="text" class="input" id="gift_comment" name="gift_comment" placeholder="Gift Text"/></div>');
+      $('#summary_bar').append('<p class="title" id="gift_wrap_bar">Gift Wrap <span><i class="fa fa-inr"></i> {{25 * cartItems|length}}</span></p>');
+
+    } else {
+      var a = parseInt($('#total_amount').text())
+      $('#total_amount').text(a-{{25 * cartItems|length}});
+      $('#gift_wrap_bar').remove();
+      $('#gift_wrap_text').remove();
+    }
+  }
+  function addURL(){
+    url = '';
+    {% if request.user.is_authenticated %}
+    url = "{{url('shipping')}}";
+    {% else %}
+    url = "{{url('login')}}";
+    {% endif %}
+      $(this).attr('href', function() {
+        if($('#gift_wrap').prop("checked")){
+          document.location = url+'?gift_wrap='+$('#gift_wrap').prop("checked")+'&gift_text='+document.getElementById('gift_comment').value;
+        } else {
+          document.location = url;
+        }
+          // +'&coupon_code='+document.getElementById('coupon_code').value+'redeemed_at'
+      });
+  }
+
+  function add_quantity(cartItem_id,price){
+    // alert('inside function');
+    $.ajax({
+      url: "/increaseQuantity/"+cartItem_id,
+      type: 'GET',
+      headers: {'content-type': 'application/json'},
+      success: function (data) {
+        $('#total_amount').text(parseInt($('#total_amount').text())+price);
+        $('#total_item_amount').text(parseInt($('#total_item_amount').text())+price);
+        $('#item_'+cartItem_id).html(data);
+        if (parseInt($('#total_item_amount').text()) > parseInt('{{delivery_charge_config[0].max_amount}}')){
+          if($('#delivery_charge_bar').length==1){
+            $('#delivery_charge_bar').remove()
+            $('#total_amount').text(parseInt($('#total_amount').text())-parseInt('{{delivery_charge_config[0].delivery_charge}}'));
+          }
+        }
+        $(document).toastr_success('Quantity increased');
+      }
+    });
+  }
+
+
+  function minus_quantity(cartItem_id,price){
+    if(parseInt($('#item_'+cartItem_id).text())==1){
+      $(document).toastr_alert('Qty Cannot be 0');
+      // return removeCartItem(cartItem_id,price);
+      return false
+    }
+    $.ajax({
+      url: "/decreaseQuantity/"+cartItem_id,
+      type: 'GET',
+      headers: {'content-type': 'application/json'},
+      success: function (data) {
+        $('#item_'+cartItem_id).html(data);
+        $('#total_amount').text(parseInt($('#total_amount').text())-price);
+        $('#total_item_amount').text(parseInt($('#total_item_amount').text())-price);
+        if (parseInt($('#total_item_amount').text())<=parseInt('{{delivery_charge_config[0].max_amount}}')){
+          if(! $('#delivery_charge_bar').length){
+            $('#summary_bar').append('<p class="title" id="delivery_charge_bar">Delivery Charge <span><i class="fa fa-inr"></i> {{delivery_charge_config[0].delivery_charge}}</span></p>');
+            $('#total_amount').text(parseInt($('#total_amount').text())+parseInt('{{delivery_charge_config[0].delivery_charge}}'));
+          }
+        }
+        $(document).toastr_success('Item Quantity decreased.');
+      }
+    });
+  }
+
+  $('.plus').click(function(e){
+    e.preventDefault();
+  });
+  $('.minus').click(function(e){
+    e.preventDefault();
+  });
+
+function checkGift(){
+  if($('#gift_wrap').prop("checked")){
+    var a = parseInt($('#total_amount').text())
+    $('#total_amount').text(a+{{(25*cartItems|length)}});
+    $('.gift-wrap').append('<div id="gift_wrap_text" class="col-sm-9 cl-xs-9"><input type="text" class="input" id="gift_comment" name="gift_comment" placeholder="Gift Text"/></div>');
+    $('#summary_bar').append('<p class="title" id="gift_wrap_bar">Gift Wrap <span><i class="fa fa-inr"></i> {{25*cartItems|length}}</span></p>');
+  }
+}
+checkGift();
+
+  </script>
+{% endblock %}

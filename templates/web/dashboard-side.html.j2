@@ -1,0 +1,56 @@
+  <ul class="dashbord-tab">
+    {% if request.user.userprofile.userType=='customer' %}
+        {% if request.path=='/dashboard/' %}
+            <a href="{{url('dashboard')}}"><li class="active-d">My Account</li></a>
+        {% else %}
+            <a href="{{url('dashboard')}}"><li>My Account</li></a>
+        {% endif %}
+    {% endif %}
+
+    {% if request.user.userprofile.userType=='vendor' %}
+        {% if request.path=='/dashboard/my-plants/' %}
+            <a href="{{url('my-plants')}}"><li class="active-d">My Plants</li></a>
+        {% else %}
+            <a href="{{url('my-plants')}}"><li>My Plants</li></a>
+        {% endif %}
+        {% if request.path=='/dashboard/add-plant/' %}
+            <a href="{{url('add-plant')}}"><li class="active-d">Add Plant</li></a>
+        {% else %}
+            <a href="{{url('add-plant')}}"><li>Add Plant</li></a>
+        {% endif %}
+    {% endif %}
+
+
+
+
+    {% if request.path=='/dashboard/change-password/' %}
+        <a href="{{url('change-password')}}"><li class="active-d">Settings</li></a>
+    {% else %}
+        <a href="{{url('change-password')}}"><li>Settings</li></a>
+    {% endif %}
+
+    {% if request.path=='/dashboard/my-wishlist/' %}
+        <!-- <a href="{{url('my-wishlist')}}"><li class="active-d">My Wishlist</li></a> -->
+    {% else %}
+        <!-- <a href="{{url('my-wishlist')}}"><li>My Wishlist</li></a> -->
+    {% endif %}
+
+    {% if request.path=='/dashboard/my-orders/' %}
+        <a href="{{url('my-orders')}}"><li class="active-d">My Order(s)</li></a>
+    {% else %}
+        <a href="{{url('my-orders')}}"><li>My Order</li></a>
+    {% endif %}
+
+    {% if request.path=='/dashboard/my-profile/' %}
+        <a href="{{url('my-profile')}}"><li class="active-d">My Profile</li></a>
+    {% else %}
+        <a href="{{url('my-profile')}}"><li>My Profile</li></a>
+    {% endif %}
+    {% if request.path=='/dashboard/my-address/' %}
+        <a href="{{url('my-address')}}"><li class="active-d">My Address</li></a>
+    {% else %}
+        <a href="{{url('my-address')}}"><li>My Address</li></a>
+    {% endif %}
+    <!-- palashjohari -->
+
+</ul>

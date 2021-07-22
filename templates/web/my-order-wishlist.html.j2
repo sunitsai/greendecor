@@ -1,0 +1,172 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+ <div class="main-content inner order-wishlist">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="order-wishlist">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 dashbord">
+                <div class="col-sm-3 secondry-bg dashbord-menu">
+                    <!-- <ul class="dashbord-tab">
+                        <a href="#"><li>My Account</li></a>
+                        <a href="#"><li>Settings</li></a>
+                        <a href="#"><li>My Wishlist</li></a>
+                        <a href="#"><li class="active-d">My Order</li></a>
+                        <a href="#"><li>Personnel Info</li></a>
+                        <a href="#"><li>Order Details</li></a>
+                    </ul> -->
+                    {% include 'web/dashboard-side.html.j2' %}
+                </div>
+                <div class="col-sm-9 dashbord-content card-wishlist order-wishlist">
+                <div class="col-xs-12 section-tilte no-gutter">
+                <h3 class="title-head col-sm-8"><span>My</span> Order Details</h3>
+                </div>
+                  <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                 <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-12 order-wishlist-card">
+                    <div class="card">
+                        <div class="slider-image">
+                            <img src="{{ static('web/img/product-image.jpg')}}">
+                        </div>
+                        <div class="sale-new">
+                                <h6 class="text">New</h6>
+                        </div>
+                        <div class="heart">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Plant For Healthy Family</h6>
+                            <h6 class="price"><i class="fa fa-inr"></i> 150.00</h6>
+                            <h6 class="price active-price"><i class="fa fa-inr"></i> 125.00</h6>
+                            <div class="hollow-button">
+                                <a href="#" class="button"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% endblock %}

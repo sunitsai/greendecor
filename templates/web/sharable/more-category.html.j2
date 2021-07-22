@@ -1,0 +1,13 @@
+{% for plant in plants %}
+{% include "web/sharable/card.html.j2" %}
+{% endfor %}
+
+{% if page == 1 or page == '1' %}
+  {% if plants|length == 0 %}
+  <div class="col-xs-12 text-center card empty">
+    <h2 style="text-transform:none;letter-spacing:.1px;margin-bottom: 1.2rem;">
+      No Plants found from this category.
+    </h2>
+  </div>
+  {% endif %}
+{% endif %}

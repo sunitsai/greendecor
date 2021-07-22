@@ -1,0 +1,122 @@
+{% extends 'base.html.j2' %}
+{% block custom_script_seo %}
+  <!-- Event snippet for Example conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-123456789/AbC-D_efG-h12_34-567',
+      'value': {{booking.amount}},
+      'currency': 'INR'
+    });
+  </script>
+{% endblock %}
+
+{% block main_content %}
+
+<script>
+
+  fbq('track', 'Purchase');
+
+</script>
+
+
+<div class="main-content inner success-page">
+      <!-- div class main content start-->
+<section class="scroll-first section-padding" id="successful">
+    <div class="container">
+        <div class="col-sm-12 dashbord success-page">
+                <div class="col-sm-10 col-centered dashbord-content">
+                <div class="col-xs-12 success-content">
+                <div class="col-sm-12 text-center">
+                    <h4 class="title"><i class="fa fa-check"></i> Order Placed Successfully</h4>
+                    <h4 class="subtitle">Your Order id : <span>  {{booking.id}}</span></h4>
+                </div>
+                {% if request.user.is_authenticated %}
+                <div class="col-sm-5 col-xs-12 text-center">
+                    <a class="button large" href="{{url('index')}}">Continue Shopping<i class="fa fa-angle-right"></i></a>
+                </div>
+                    <div class="col-sm-1 col-xs-12 text-center margin-top-20">
+                      <p class="title">Or</p>
+                    </div>
+                 <div class="col-sm-6 col-xs-12 text-center">
+                    <a class="button large" href="{{url('dashboard')}}">Go To Dashbord <i class="fa fa-angle-right"></i></a>
+                </div>
+                {% else %}
+                <div class="col-sm-12 col-xs-12 text-center">
+                    <a class="button large" href="{{url('index')}}">Continue Shopping<i class="fa fa-angle-right"></i></a>
+                </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+</div>
+
+<iframe src="https://traqkar.com/p.ashx?o=132&e=125&p={{booking.amount}}&t={{booking.id}}&ect={{booking.amount}}" height="1" width="1" frameborder="0"></iframe>
+
+<!-- Google Code for GreenDecor Conversion Conversion Page -->
+
+<script type="text/javascript">
+
+/* <![CDATA[ */
+
+var google_conversion_id = 944680957;
+
+var google_conversion_language = "en";
+
+var google_conversion_format = "3";
+
+var google_conversion_color = "ffffff";
+
+var google_conversion_label = "rKmKCMaf53UQ_d-6wgM";
+
+var google_remarketing_only = false;
+
+/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+</script>
+
+<noscript>
+
+<div style="display:inline;">
+
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/944680957/?label=rKmKCMaf53UQ_d-6wgM&amp;guid=ON&amp;script=0"/>
+
+</div>
+
+</noscript>
+
+{% endblock %}
+
+{% block custome_script %}
+<script>
+ga('require', 'ecommerce');
+ga('ecommerce:addTransaction', {
+'id': '{{booking.id}}', // Transaction ID. Required.
+'affiliation': 'GreenDecor', // Affiliation or store name.
+'revenue': '{{booking.amount}}', // Grand Total.
+'shipping': '{{booking.delivery_charge}}', // Shipping.
+'tax': '0' // Tax.
+});
+//var prod = []  //wigzo removed
+{% for i in plant_details %}
+  ga('ecommerce:addItem', {
+  'id': '{{booking.id}}', // Transaction ID. Required.
+  'name': '{{i.plant.name}}', // Product name. Required.
+  'sku': '{{i.plant.id}}', // SKU/code.
+  'category': '{{i.plant.category}}', // Category or variation.
+  'price': '{{i.price}}', // Unit price.
+  'quantity': '{{i.quantity}}' // Quantity.
+  });
+//  prod.push('{{i.plant.id}}') //wigzoremoved
+{% endfor %}
+
+//wigzo ("track", "buy", prod);  //wigzoremoved
+
+ga('ecommerce:send');
+</script>
+
+{% endblock %}

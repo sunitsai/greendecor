@@ -1,0 +1,13 @@
+export SECRET_KEY = '9=v4)m4a+3xcc1$2zy5nlm(c6blt!*4ktyw@_f8g&er*#!1lf3'
+export ALGOLIA_APPLICATION_ID=5HSSM1MEYP
+export ALGOLIA_API_KEY=8470a48e159ab673292a7d0ae29bdb33
+export ALGOLIA_SEARCH_API_KEY=XXXXX
+export FB_SOCIAL_AUTH_KEY=793041757509553
+export FB_SOCIAL_AUTH_SECRET_KEY=77a9de0c25c592d1453c11e5a65d0ec0
+export GOOGLE_SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=758014244553-9tufia7kvvhek5p72uivr7c3vv72ketl.apps.googleusercontent.com
+export GOOGLE_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=9ZfQ3YgHFqW3NpdgKOece7_T
+export USEEMAIL=sunitjha100@gmail.com
+export EMAIL_HOST=sunitjha100@gmail.com
+export DEFAULT_TO_EMAIL=sunitjha100@gmail.com
+export EMAIL_BACKEND=sunitjha100@gmail.com
+export EMAIL_HOST_PASSWORD

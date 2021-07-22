@@ -1,0 +1,212 @@
+{% extends 'base.html.j2' %}
+{% block main_content %}
+      <section class="review-content">
+         <div class="container">
+            <div class="main-content">
+               <div class="row">
+                  <div class="rating-area">
+                     <div class="row">
+                        <div class="col-md-3">
+                           <div class="head-text">
+                              <h6>Overall Rating</h6>
+                              <h4>4.0</h4>
+                              <p>Reviews 2,654</p>
+                              <div class="rating-star">
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="popup-btn">
+                           <button type="button" class="btn review-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            Write a review
+                           </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-------------------------Review popup------------------------->
+               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h2 class="modal-title" id="exampleModalLongTitle">WRITE A REVIEW</h2>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                           </button>
+                        </div>
+   
+                        <div class="modal-body">
+                            <div class="overall-12">
+                                <h5 class="overall">Overall  rating</h5>
+                                <ul class="rate-area">
+                                    <input type="radio" id="5-star" name="rating" value="5" /><label for="5-star"></label>
+                                    <input type="radio" id="4-star" name="rating" value="4" /><label for="4-star"></label>
+                                    <input type="radio" id="3-star" name="rating" value="3" /><label for="3-star"></label>
+                                    <input type="radio" id="2-star" name="rating" value="2" /><label for="2-star"></label>
+                                    <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star"></label>
+                                  </ul>
+                                </div>
+                                <hr id="divide">
+                                <form>
+                                    <!--<div class="form-group">
+                                        <label for="exampleFormControlSelect1"><h5 class="overall">Add Category</h5></label>
+                                        <select class="form-control f1" id="exampleFormControlSelect1">
+                                          <option>Select a category</option>
+					  {% for cat in categories.all() %}
+					      {% if cat.parent_category==None %}
+						<option value="{{cat.id}}">{{cat.name}}</option>
+					      {% endif %}
+					    {% endfor %}                                          
+                                        </select>
+                                      </div>
+                                      <hr id="divide-1">
+                                      <div class="form-group">
+                                        <label for="exampleFormControlSelect1"><h5 class="overall">Add a headline</h5></label>
+                                        <input class="form-control f1" type="text" placeholder="What’s most important to know?" id="reviewtitle" name="reviewtitle" required>
+                                      </div>-->
+                                      <hr id="divide-1">
+                                      <div class="form-group">
+                                        <label for="exampleFormControlSelect1"><h5 class="overall">Add a written review</h5></label>
+                                        <textarea class="form-control f1" id="exampleFormControlTextarea1" rows="3" placeholder="What did you like or dislike? what did  you use this product for?"  id="reviewdesc" name="reviewdesc" required></textarea>
+                                      </div>
+                                    </form>
+                        </div>
+                        <div class="modal-footer b2">
+                           <button type="button" class="btn btn-bg">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- -----------------------End------------------------------>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="category">
+                        <h6 id="catgry-text">Review by Category</h6>
+                        <!--<form class="form-inline mb-3">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Search By Category">
+                              <button type="submit" class="btn search-btn"><i class="fa fa-search" aria-hidden="true"></i>
+                              </button>
+                           </div>
+                        </form>-->
+                        <div class="catogry-check">
+			{% for cat in categories.all() %}
+                              {% if cat.parent_category==None %}                                
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" id="{{cat.id}}" name="check[]">
+					<label class="form-check-label" for="materialUnchecked">{{cat.name}}</label>
+				</div>
+                              {% endif %}
+                            {% endfor %}
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-9">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="user-review">
+                              <p>Satender Singh Rajput</p>
+                              <div class="rating-star">
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <p id="member">Verified Buyer</p>
+                                 <p id="review-date">30 OCT 2020</p>
+                              </div>
+                              <p id="customer-text">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <p id="cust-txt">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <div class="user-ico">
+                                 <p> <i class="fa fa-thumbs-up"></i><span>Helpful</span></p>
+                                 <p id="r-ico"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Report</span></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <hr id="bottom-line">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="user-review spc">
+                              <p>Satender Singh Rajput</p>
+                              <div class="rating-star">
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <p id="member">Verified Buyer</p>
+                                 <p id="review-date">01 OCT 2020</p>
+                              </div>
+                              <p id="customer-text">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <p id="cust-txt">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <div class="user-ico">
+                                 <p> <i class="fa fa-thumbs-up"></i><span>Helpful</span></p>
+                                 <p id="r-ico"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Report</span></p>
+                              </div>
+                              <hr id="bottom-line">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="user-review spc-1">
+                              <p>Satender Singh Rajput</p>
+                              <div class="rating-star">
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <p id="member">Verified Buyer</p>
+                                 <p id="review-date">3 OCT 2020</p>
+                              </div>
+                              <p id="customer-text">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <p id="cust-txt">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <div class="user-ico">
+                                 <p> <i class="fa fa-thumbs-up"></i><span>Helpful</span></p>
+                                 <p id="r-ico"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Report</span></p>
+                              </div>
+                              <hr id="bottom-line">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="user-review spc-2">
+                              <p>Satender Singh Rajput</p>
+                              <div class="rating-star">
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star s-gold" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <i class="fa fa-star un-checked" aria-hidden="true"></i>
+                                 <p id="member">Verified Buyer</p>
+                                 <p id="review-date">20 OCT 2020</p>
+                              </div>
+                              <p id="customer-text">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <p id="cust-txt">It is a good product  jhukgkub kgukgku lghuhlj.</p>
+                              <div class="user-ico">
+                                 <p> <i class="fa fa-thumbs-up"></i><span>Helpful</span></p>
+                                 <p id="r-ico"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Report</span></p>
+                              </div>
+                              <hr id="bottom-line">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      </section>
+      <div class="container">
+      </div>
+     <!-- Optional JavaScript -->       
+{% endblock %}

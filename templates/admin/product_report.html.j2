@@ -1,0 +1,73 @@
+
+<!-- Content -->
+
+<div>
+    <form action="" method="POST">
+        <div>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <label for="start_date">Start Date</label>
+            <input type="date" id="start_date" name="start_date" value="{% if start_date %}{{start_date}}{% endif %}">
+            <label for="end_date">End Date</label>
+            <input type="date" id="end_date" name="end_date" value="{% if end_date %}{{end_date}}{% endif %}">
+            <input type="submit" value="Get Sales Record">
+        </div>
+    </form>
+</div>
+
+{%if product_report%}
+  <div class="">
+    <a href="/media/reports.xlsx" target="_self" download> Download file </a>
+  </div>
+
+  <div>
+    <table id="result_list">
+        <thead>
+            <tr>
+            <th>
+                <div class="text">Plant Name</div>
+                <div class="clear"></div>
+            </th>
+            <th>
+                <div class="text">Quantity</div>
+                <div class="clear"></div>
+            </th>
+            <th>
+                <div class="text">Unit Selling Price</div>
+                <div class="clear"></div>
+            </th>
+            <th>
+                <div class="text">Unit Cost Price</div>
+                <div class="clear"></div>
+            </th>
+            <th>
+                <div class="text">Total Price</div>
+                <div class="clear"></div>
+            </th>
+            </tr>
+        </thead>
+
+        <tbody>
+          {% for pr in product_report %}
+            <tr>
+                <td>
+                    {{pr.plant__name}}
+                </td>
+                <td>
+                    {{pr.quantity__sum}}
+                </td>
+                <td>
+                    {{pr.plant__selling_price}}
+                </td>
+                <td>
+                    {{pr.plant__actual_price}}
+                </td>
+                <td>
+                    {{pr.plant__selling_price * pr.quantity__sum}}
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endif %}
+<!-- END Content -->

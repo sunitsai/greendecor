@@ -1,0 +1,144 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+{% set cartCount = get_no_of_cart_items(request) %}
+{% extends 'base.html.j2' %}
+{% block main_content %}
+
+<style>
+.show-pwd i.fa {
+    top: 43px;
+    right: 30px;
+  }
+.form .form-input input{
+  padding: 8px 10px;
+    border: 1px solid rgba(153, 153, 153, 0.6);
+    margin-bottom: 10px;
+}
+.form .form-input label{
+  margin-bottom: 5px;
+}
+.guest-btn a{
+  border: 1px solid #808080;
+  color: #808080;
+  border-radius: 0;
+}
+
+.guest-btn a i.fa{
+  font-size: 20px;
+  vertical-align: text-bottom;
+  margin: 0 0 0 2px;
+}
+
+@media only screen and (max-width: 460px){
+  .form .form-input{
+    padding: 0;
+    margin: 15px 0 25px;
+
+  }
+  .form .form-input ul.tabs{
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .guest-btn h3{
+    margin: 15px 0 20px;
+  }
+  .guest-btn a{
+    margin: 50px 0 0;
+  }
+  div.tab-content{
+    height: 311px;
+  }
+}
+</style>
+ <div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="login-signup">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12 form col-centered">
+            <div class="signup col-xs-12 no-gutter">
+                <div class="col-xs-12 col-sm-5 border-right hidden-xs">
+                    <h3 class="title-head"><span>Get</span> Started</h3>
+                   <p class="title">Login and Get access to offers , manage / track your Orders via your GD Account.</p>
+                        <a href="{{ url('social:begin',args=['google-oauth2',]) }}" class="google-btn"><i class="fa fa-google-plus"></i>Log in with Google</a>
+                        <a href="{{ url('social:begin', args=['facebook',]) }}" class="facebook-btn"><i class="fa fa-facebook"></i>Log in with Facebook</a>
+                </div>
+                <div class="col-xs-12 col-sm-7 form-input">
+                  <div class="col-xs-12 hollow-button guest-btn text-center hidden-lg hidden-md hidden-sm">
+                    <a href="{{url('shipping')}}" class="button">Continue as a guest <i class="fa fa-angle-right"></i></a>
+                    <h3 class="">OR</h3>
+                  </div>
+
+                <div class="col-xs-12">
+                    <ul class="tabs">
+                        <li class="active-tab">Log In</li>
+                        <a href="{{url('register')}}"><li>
+                            Sign Up</li></a>
+                    </ul>
+                    <div class="tab-content no-gutter col-xs-12">
+                      <div class="col-xs-12">
+                        <form method="post">
+                          <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                              <div class="col-xs-12">
+                                  <label>Mobile Number</label>
+                                  {{form.username}}
+                              </div>
+                              <div class="col-xs-12 show-pwd">
+                                  <label>Password</label>
+                                  {{form.password}}
+                                  <i class="fa fa-eye"></i>
+                              </div>
+
+                              {% if form.errors %}
+                                <div class="col-xs-12">
+                                    {%for error in form.errors.__all__%}
+                                    <p style="color:red;">{{error}}</p>
+                                    {%endfor%}
+                                </div>
+                              {%endif%}
+
+                              <div class="col-xs-12">
+                                <a href="{{url('reset_pasword_do')}}" class="f-p p-0"> Forgot Password? </a>
+                              </div>
+                              <div class="col-xs-12 submit">
+                                  <input type="Submit" value="Log In" />
+                              </div>
+
+<!-- gift_wrap=true&gift_text=testing -->
+{% set gift_wrap = request.GET['gift_wrap'] %}
+{% set gift_text = request.GET['gift_text'] %}
+
+
+                              <div class="col-xs-12 hollow-button guest-btn text-center hidden-xs">
+                                <h3 class="">OR</h3>
+                                <a href="{% if cartCount %}{{url('shipping')}}{% if gift_wrap == 'true' %}?gift_wrap={{gift_wrap}}&gift_text={{gift_text}}{% endif %}{% else %}{{url('index')}}{% endif %}" class="button">Continue as a guest <i class="fa fa-angle-right"></i></a>
+                              </div>
+                          </form>
+                      </div>
+                      <div class="col-xs-12 tab-2 t">
+
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+
+<style>
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+}
+</style>
+{% endblock %}

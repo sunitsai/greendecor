@@ -1,0 +1,696 @@
+{% extends 'base.html.j2' %}
+{% block custome_head %}
+  {{plant.custom_header_meta|safe}}
+{% endblock %}
+{% block custom_script_seo %}
+  {{plant.custom_script_seo|safe}}
+{% endblock %}
+{% block main_content %}
+<style>
+#navigation-new{
+  visibility: hidden;
+}
+.counting{
+  margin-bottom: 20px;
+    padding-left: 0px;
+}
+.shop-btns{
+  margin-top: 20px;
+}
+.add-to-cart .shop-btns a.button{
+  margin-left: 10px;
+    border: 1px solid transparent;
+}
+.add-to-cart .buy-now-btn-pdp-page{
+  background: #29821e;
+}
+.add-to-cart .buy-now-btn-pdp-page:hover{
+  background: transparent;
+  border: 1px solid #29821e !important;
+  color: #29821e;
+}
+.add-to-cart .shop-btns a.button{
+  padding: 10px 26px;
+}
+.add-to-cart .shop-btns a.button i.fa{
+  margin-top: -15px;
+}
+/*.add-to-cart .buy-now-btn-pdp-page{
+  position: absolute;
+  bottom: -3.4rem;
+  left: inherit;
+  right: 20rem;
+  width: 88%;
+  background: #bd7e02;
+  padding: 10px 26px !important;
+}
+.add-to-cart .buy-now-btn-pdp-page:hover{    background: transparent;}
+.content-box .add-to-cart > div.col-xs-12.col-sm-7{
+  padding-top: 8px;
+}*/
+
+
+@media only screen and (max-width: 460px){
+
+}
+.price{
+  display: inline-block;
+}
+</style>
+ <div class="main-content inner product-p">
+      <!-- div class main content start-->
+      <!-- /container -->
+      <section class="scroll-first secondry-bg" id="product-detail">
+          <div class="container-fluid">
+            <div class="row product-detail">
+                <div class="col-md-12 col-xs-12 content">
+                    <div class="col-sm-6 col-md-6 col-lg-6 image-gallery">
+                      <div id="image-box">
+                       <p class="pdp-image-box-info">NOTE : Regular delivery in standard white plastic pot.</p>
+                        {% if plant.images.all()|length>0 %}
+                          <img style="border:1px solid #e8e8e6;" id="zoom_03" src="/media/{{plant.images.all()[0].image}}" alt="{{plant.images.all()[0].alt}}" title="{{plant.images.all()[0].title}}"  data-zoom-image="/media/{{plant.images.all()[0].image}}"/>
+                        {% else %}
+                          <img style="border:1px solid #e8e8e6;" id="zoom_03" src="" alt="" title=""  data-zoom-image=""/>
+                        {% endif %}
+                          <div id="gallery_01">
+                            {% for img in plant.images.all() %}
+                              {% if loop.index==1 %}
+                                <a  href="tester" class="elevatezoom-gallery active" data-update="" data-image="/media/{{img.image}}" data-zoom-image="/media/{{img.image}}">
+                                  <img src="/media/{{img.image}}" alt="{{img.alt}}" title="{{img.title}}" width="100"  />
+                                </a>
+                              {% else %}
+                                <a  href="tester" class="elevatezoom-gallery" data-image="/media/{{img.image}}" data-zoom-image="/media/{{img.image}}">
+                                  <img src="/media/{{img.image}}" alt="{{img.alt}}" title="{{img.title}}" width="100"  />
+                                </a>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 content-box">
+                        <div class="section-title col-sm-9 col-md-9 col-xs-8">
+                        <h1 class="product-name">{{plant.name}} <i class="fa fa-heart-o"></i></h1>
+<!--                        <h4><p>{{plant.category}}</p></h4>-->
+                        </div>
+                    <div class="no-gutter col-md-3 col-sm-3 col-xs-4">
+                         <div class="product-offer col-sm-12 text-right col-xs-12">
+                            {% if plant.price_before_sale %}<h6 class="price"><i class="fa fa-inr"></i> {{plant.price_before_sale}}</h6>{% endif %}
+                            <h4 class="price active-price"><i class="fa fa-inr"></i> {{plant.selling_price}}</h4>
+                        </div>
+
+
+
+<!--
+                        <div class="col-sm-7 col-xs-12 review-section">
+                            <fieldset class="rating">
+                                <input type="radio" id="star6" name="rating" value="5" /><label class = "full" for="star6" title="Awesome - 5 stars"></label>
+                                <input type="radio" id="star7half" name="rating" value="4 and a half" /><label class="half" for="star7half" title="Pretty good - 4.5 stars"></label>
+                                <input type="radio" id="star7" name="rating" value="4" /><label class = "full" for="star7" title="Pretty good - 4 stars"></label>
+                                <input type="radio" id="star8half" name="rating" value="3 and a half" /><label class="half" for="star8half" title="Meh - 3.5 stars"></label>
+                                <input type="radio" id="star8" name="rating" value="3" /><label class = "full" for="star8" title="Meh - 3 stars"></label>
+                                <input type="radio" id="star9half" name="rating" value="2 and a half" /><label class="half" for="star9half" title="Kinda bad - 2.5 stars"></label>
+                                <input type="radio" id="star9" name="rating" value="2" /><label class = "full" for="star9" title="Kinda bad - 2 stars"></label>
+                                <input type="radio" id="star0half" name="rating" value="1 and a half" /><label class="half" for="star0half" title="Meh - 1.5 stars"></label>
+                                <input type="radio" id="star0" name="rating" value="1" /><label class = "full" for="star0" title="Sucks big time - 1 star"></label>
+                                <input type="radio" id="starhal" name="rating" value="half" /><label class="half" for="starhal" title="Sucks big time - 0.5 stars"></label>
+                            </fieldset>
+                            <span class="add-review">Add Review</span>
+                        </div>
+-->
+                        </div>
+
+                        <div class="col-md-12 col-xs-12 col-sm-12 info hidden">
+                        {% if plant.product_type=='Plants' %}
+                            <p> <i class="fa fa-info-circle"></i> &nbsp;The pot in the picture is for reference only. A standard white Plastic Pot will be delivered for free along with plants chosen. For fancy pots please explore Accessories section.</p>
+                            {% endif %}
+                        </div>
+                        <!--<div class="col-xs-12 bottom-top-seprater">
+                            <div class="more-info">
+                                <h6 class="info"><i class="fa fa-home"></i> Placements</h6>
+                                <h6 class="label">{{plant.get_placement_display()}}</h6>
+                            </div>
+                            <div class="more-info border-left">
+                                <h6 class="info"><i class="fa fa-arrows-v"></i> Height(Inch)</h6>
+                                <h6 class="label">{{plant.min_height}}" to {{plant.max_height}}"</h6>
+                            </div>
+
+                            <div class="more-info">
+                                <h6 class="info"><i class="fa fa-skyatlas"></i> Seasons</h6>
+                                <h6 class="label">{% for s in plant.season.all() %}{{s.name}}{% endfor %}</h6>
+                            </div>
+                            <div class="more-info border-left">
+                                <h6 class="info"><i class="fa fa-eye-slash"></i> Toxicity</h6>
+                                <h6 class="label">{{plant.toxicity}}</h6>
+                            </div>
+                            <div class="more-info">
+                                <h6 class="info"><i class="fa fa-cogs"></i> Maintaince Level</h6>
+                                <h6 class="label">{{plant.maintenance_level}}</h6>
+                            </div>
+                            <div class="more-info hidden-1024 border-left">
+                                &nbsp;
+                            </div>
+                        </div>-->
+                        {% if plant.product_type=='Plants' %}
+                          <div class="col-xs-12 bottom-top-seprater no-gutter">
+                            <div class="more-info col-xs-3">
+                                <div class="fa fa-cogs">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info"><i class="fa fa-cogs"></i> Maintenance Level</h6>
+                                <h6 class="label">{{plant.maintenance_level}}</h6>
+                                </div>
+                            </div>
+                            <div class="more-info col-xs-3">
+                                <div class="fa fa-home">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info"><i class="fa fa-home"></i> Placements</h6>
+                                <h6 class="label">{{plant.get_placement_display()}}</h6>
+                                </div>
+                            </div>
+                            <div class="more-info col-xs-3">
+                                <div class="fa fa-eye-slash">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info"><i class="fa fa-eye-slash"></i> Toxic</h6>
+                                <h6 class="label">{{plant.get_toxicity_display()}}</h6>
+                                </div>
+                            </div>
+                            <div class="more-info col-xs-3">
+                                 <div class="fa fa-leaf">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info"><i class="fa fa-arrows-v"></i> Fragrance</h6>
+                                <h6 class="label">{{plant.fragrance}}</h6>
+                                </div>
+                            </div>
+
+                            <div class="more-info col-xs-3">
+                                <div class="fa fa-skyatlas">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info"><i class="fa fa-skyatlas"></i> Seasons</h6>
+                                <h6 class="label">{% for s in plant.season.all() %}{{s.name}}
+                                  {% endfor %}
+                                </h6>
+                                </div>
+                            </div>
+                            <div class="more-info col-xs-3">
+                                <div class="fa fa-arrows-v">
+                                </div>
+                                <div class="info-box">
+                                <h6 class="info">Plant Height</h6>
+                                <h6 class="label">{{plant.min_height}}" to {{plant.max_height}}"</h6>
+                                </div>
+                              </div>
+                            <div class="more-info col-xs-6 no-padd-reponsive">
+                                <div class="col-xs-12">
+                                    <h4 class="box-head"><i class="fa fa-tint"></i> &nbsp;Water Frequency</h6>
+                                </div>
+                               <div class="more-divide-info col-xs-6">
+                                    <h4 class="info">Winter</h4>
+                                   <h6 class="label">{{plant.get_water_frequency_winter_display()}}</h6>
+                                </div>
+                                 <div class="more-divide-info col-xs-6">
+                                    <h4 class="info">Summer</h4>
+                                      <h6 class="label">{{plant.get_water_frequency_summer_display()}}</h6>
+                                </div>
+                            </div>
+                            <div class="more-info col-xs-6 no-padd-reponsive">
+                                <div class="col-xs-12">
+                                    <h4 class="box-head"><i class="fa fa-archive"></i> &nbsp; Fertilizer Frequency</h4>
+                                </div>
+                                <div class="more-divide-info col-xs-6">
+                                    <h4 class="info">Winter</h4>
+                                     <h6 class="label">{{plant.get_fertilizer_frequency_winter_display()}}</h6>
+                                </div>
+                                 <div class="more-divide-info col-xs-6">
+                                    <h4 class="info">Summer</h4>
+                                      <h6 class="label">{{plant.get_fertilizer_frequency_summer_display()}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if plant.product_type!='Plants' %}
+                          <div class="col-xs-12 bottom-top-seprater">
+                            <div class="col-sm-3 col-xs-4">
+								<p class="text bold">Description :</p>
+							  </div>
+							  <div class="col-sm-9 col-xs-8">
+							  	{{plant.benefits|safe}}
+							  </div>
+                          </div>
+                          <div class="col-xs-12 padding-top-15">
+							  <ul class="list">
+							  	<li class="more-info"><div class="col-sm-3 col-xs-4"><h6 class="info"><i class="fa fa-home"></i> Placement</h6>
+									</div>
+									<div class="col-sm-9 col-xs-8"><h6 class="label">{{plant.get_placement_display()}}</h6></div>
+								  </li>
+								   {% if plant.product_type=='Pots' %}
+								  <li class="more-info"><div class="col-sm-3 col-xs-4"><h6 class="info"><i class="fa fa-arrows-v"></i> Pot Height(Inch)</h6>
+									</div>
+									<div class="col-sm-9 col-xs-8"><h6 class="label">{{plant.height}}"</h6></div>
+								  </li>
+								   {% endif %}
+
+                         {% if plant.product_type=='Pots' %}
+								  <li class="more-info"><div class="col-sm-3 col-xs-4"><h6 class="info"><i class="fa fa-arrows-v"></i> Width (Inch)</h6>
+									</div>
+									<div class="col-sm-9 col-xs-8"><h6 class="label">{{plant.width}}"</h6></div>
+								  </li>
+								   {% endif %}
+
+                         {% if plant.product_type=='Pots' %}
+								  <li class="more-info"><div class="col-sm-3 col-xs-4"><h6 class="info"><i class="fa fa-arrows-v"></i> Diameter (Inch)</h6>
+									</div>
+									<div class="col-sm-9 col-xs-8"><h6 class="label">{{plant.diameter}}"</h6></div>
+								  </li>
+								   {% endif %}
+                          </div>
+                        {% endif %}
+                        <div class="col-xs-12 add-to-cart">
+                            <div class="col-xs-12 col-sm-5 col-md-5">
+                              <div class="col-sm-12 col-xs-12  counting">
+                              Qty:&nbsp;&nbsp;<a class="minus" onclick="minusOne()"><i class="fa fa-minus"></i></a><span id="qtn">1</span><a Class="plus" onclick="plusOne()"><i class="fa fa-plus"></i></a>
+                              </div>
+                            <div class="">
+                                <select class="form-control" name="suplementry-product" id="suplementry-product">
+                                  <option value="0">Free White Plastic Pot</option>
+                                  <!-- <option value="1664">White Ceramic Pot (Rs 100)</option> -->
+                                </select>
+                             </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-12 no-gutter">
+
+                              <div class="shop-btns">
+                                {% if plant.stock %}
+                                  <a id="ga-gd-tracking" href="javascript:void(0)" onclick="add_to_cart({{plant.id}},parseInt($('#qtn').text()));add_or_remove_this_product()" class="title button ga-gd-tracking"><i class="fa fa-shopping-cart"></i> Add To cart</a>
+                                  <a id="ga-gd-tracking" href="javascript:void(0)" onclick="buy_now({{plant.id}},parseInt($('#qtn').text()));add_or_remove_this_product()" class="title button ga-gd-tracking buy-now-btn-pdp-page"><i class="fa fa-rupee"></i> Buy Now</a>
+                                {% else %}
+                                  <span class="button no-stock-btn">Out of Stock</span>
+                                {% endif %}
+                              </div>
+                              <div class="col-md-5 col-md-offset-6 col-xs-12 text-left" id="shipinfo">*Shipping Info</div>
+
+                               <!-- <div class="col-xs-12 no-gutter text-center">
+                                   <a data-sumome-share-id="7dffbb3e-3f10-458c-83d7-63938edc2c11"></a>
+                                </div>
+                                <div class="col-xs-12 no-gutter add-cart-review">
+                              <fieldset class="rating">
+                                <input type="radio" id="star6" name="rating" value="5" /><label class = "full" for="star6" title="Awesome - 5 stars"></label>
+                                <input type="radio" id="star7half" name="rating" value="4 and a half" /><label class="half" for="star7half" title="Pretty good - 4.5 stars"></label>
+                                <input type="radio" id="star7" name="rating" value="4" /><label class = "full" for="star7" title="Pretty good - 4 stars"></label>
+                                <input type="radio" id="star8half" name="rating" value="3 and a half" /><label class="half" for="star8half" title="Meh - 3.5 stars"></label>
+                                <input type="radio" id="star8" name="rating" value="3" /><label class = "full" for="star8" title="Meh - 3 stars"></label>
+                                <input type="radio" id="star9half" name="rating" value="2 and a half" /><label class="half" for="star9half" title="Kinda bad - 2.5 stars"></label>
+                                <input type="radio" id="star9" name="rating" value="2" /><label class = "full" for="star9" title="Kinda bad - 2 stars"></label>
+                                <input type="radio" id="star0half" name="rating" value="1 and a half" /><label class="half" for="star0half" title="Meh - 1.5 stars"></label>
+                                <input type="radio" id="star0" name="rating" value="1" /><label class = "full" for="star0" title="Sucks big time - 1 star"></label>
+                                <input type="radio" id="starhal" name="rating" value="half" /><label class="half" for="starhal" title="Sucks big time - 0.5 stars"></label>
+                            </fieldset><span>(24) Reviews</span>
+                                </div> -->
+                            </div>
+                        </div>
+
+
+
+<!--
+                         <div class="col-xs-12 content-detail">
+                            <p class="text">{{plant.about|safe}}</p>
+                        </div>
+
+-->
+                    </div>
+                </div>
+              </div>
+        </div>
+      </section>
+      <!--product section-->
+     <!--social share
+     <section class="second-scroll section-padding" id="share">
+         <div class="container">
+             <div class="row share">
+                <div class="col-xs-12 share">
+                    <div class="col-xs-12 n0-gutter text-center social-share">
+                        <a href="#" class="share"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="share"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="share"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="#" class="share"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+             </div>
+         </div>
+     </section>
+     <!-- social share end-->
+     <!-- tabs detail sec-->
+     <section class="third-scroll section-padding" id="deatil-tabs-sec">
+        <div class="container">
+            <div class="row">
+<!--
+                <div class="col-xs-12 section-title text-center">
+                    <h3 class="title-head"><span>About </span> {{plant.name}}</h3>
+                </div>
+-->
+                <div class="col-xs-12 tabs-sec">
+                <ul class="tabs">
+      						{% if plant.product_type!='Plants' %}
+      						  <li class="tab-1 active-tab"><i class="fa fa-info-circle hidden-xs"></i> &nbsp;About <span>{{plant.name}}</span></li>
+                    <li class="tab-6"><i class="fa fa-truck"></i> &nbsp;Shipping Info</li>
+      						{% endif %}
+                  {% if plant.product_type=='Plants' %}
+    <li class="tab-1 active-tab"><i class="fa fa-info-circle hidden-xs"></i> &nbsp;About <span>{% if plant.name|length >10 %}{{plant.name[:10]}}..{% else %}{{plant.name}}{% endif %}</span></li>
+
+    <li class="tab-2"><i class="fa fa-pagelines hidden-xs"></i> &nbsp;How To Grow  <span>{% if plant.name|length >10 %}{{plant.name[:10]}}..{% else %}{{plant.name}}{% endif %}</span></li>
+
+    <li class="tab-3"><i class="fa fa-thumbs-o-up hidden-xs"></i> &nbsp;Benefits <span>of {% if plant.name|length >10 %}{{plant.name[:10]}}..{% else %}{{plant.name}}{% endif %}</span></li>
+
+    <li class="tab-5"><i class="fa fa-cog hidden-xs"></i> &nbsp;Maintenance Tips</li>
+
+                    
+                </ul>
+                 <div class="tab-content col-xs-12">
+                      <div class="tab-1 t active-content">
+                          <p class="text">{{plant.about|safe}}</p>
+                      </div>
+                    {% if plant.product_type=='Plants' %}
+                      <div class="tab-2 t">
+                        <div class="col-xs-12 how-to-grow">
+                        <div class="col-sm-5 col-xs-12 content-box no-gutter">
+                            <div class="col-xs-12 box">
+                            <h5 class="lead"> Soil Need </h5>
+                                <p class="text">{{plant.how_to_grow_soil_need}}</p>
+                            </div>
+                            <div class="col-xs-12 box">
+                                  <h5 class="lead">Fertilizer (type)  </h5>
+                                <p class="text">{{plant.how_to_grow_fertilizer_type}}</p>
+                            </div>
+                            <div class="col-xs-12 box">
+                                <h5 class="lead">Growth Pattern  </h5>
+                                <p class="text"> {{plant.how_to_grow_growth_pattern}} </p>
+                            </div>
+                            <div class="col-xs-12 box">
+                                <h5 class="lead"> Pruning </h5>
+                                <p class="text">{{plant.get_how_to_grow_pruning_display()}}</p>
+                            </div>
+                            <div class="col-xs-12 box">
+                                <h5 class="lead">  Re-Potting </h5>
+                                <p class="text">{{plant.get_how_to_grow_re_potting_display()}}</p>
+                            </div>
+                        </div>
+                           <div class="col-sm-7 col-xs-12 no-gutter">
+                            <div class="col-xs-12 box text">
+                                <h5 class="lead">  Process :</h5>
+                                  {{plant.how_to_grow_process |safe}}
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="tab-3 t">
+                            <p class="text">{{plant.benefits|safe}}</p>
+                      </div>
+                      {% endif %} 
+
+                      <div class="tab-5 t">
+                        <!--<p class="text">{{plant.maintenance_tip}}</p>-->
+                        <div class="col-xs-12 col-md-12 dos-donts">
+                              <div class="col-xs-12 col-sm-6 col-md-6 dos">
+                                  <h4 class="title"> Do's</h4>
+                                  <p class="text">{{plant.maintenance_tip_do|safe}}</p>
+                              </div>
+                              <div class="col-xs-12 col-sm-6 col-md-6 donts">
+                                  <h4 class="title">Don'ts</h4>
+                                  <p class="text">{{plant.maintenance_tip_dont|safe}}</p>
+                              </div>
+                           </div>
+                      </div>
+                    {% endif %}
+                    <div class="tab-6 t">
+                        <p class="text">{{plant.shipping_info|safe}}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+     </section>
+     <!-- tabs detail sec end-->
+    <section id="product-sec" class="secondry-bg section-padding product-sec section-margin fourth-scroll">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 section-title text-center">
+            <h3 class="title-head"><span>Similar </span>Products</h3>
+          </div>
+              <div class="col-md-12">
+               <div class="item">
+                <ul id="divide-slider" class="divide-slider">
+                  {% for plant in plants.all() %}
+                    <li>
+                      <div class="card">
+                          <a href="{{ url('plant_details', args=[plant.slug]) }}">
+                          <div class="slider-image">
+                            {% if plant.images.all()|length>0 %}
+                              <img src="/media/{{plant.images.all()[0].image}}" alt="{{plant.images.all()[0].alt}}" title="{{plant.images.all()[0].title}}">
+                            {% else %}
+                              <img src="">
+                            {% endif %}
+                          </div>
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+                        </a>
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content">
+                              <a href="{{ url('plant_details', args=[plant.slug]) }}">
+                              <h2 class="title">{{plant.name}}</h2>
+                              {% if plant.price_before_sale %}
+				<h6 class="price"><i class="fa fa-inr"></i> {{plant.price_before_sale}}</h6>
+			      {% endif %}
+                              <h6 class="price active-price"><i class="fa fa-inr"></i> {{plant.selling_price}}</h6>
+                              </a>
+                              <div class="hollow-button">
+                                {% if plant.stock %}
+                                  <a id="ga-gd-tracking" onclick="add_to_cart({{plant.id}},1)" class="button ga-gd-tracking"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                                {% else %}
+                                  <span class="button no-stock-btn">Out of Stock</span>
+                                {% endif %}
+                              </div>
+                          </div>
+                      </div>
+                    </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--product section end-->
+          <!--review section add-after-design on client requirment-->
+  
+     <!-- review section end--->
+      <!--Testomanial section -->
+<!--
+      <section class="fifth-scroll section-margin testomanial section-padding" id="testomanial">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-12 section-tile">
+              <h3 class="title-head"><span>from </span>Green Decor Blog</h3>
+          </div>
+          <div class="col-md-12 section-content">
+          <div class="col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+              <div class="col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+              <div class="col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+-->
+      <!--Testomanial end-->
+      <!--div main content end-->
+    </div>
+
+{% endblock %}
+{% block custome_script %}
+
+<script src="{{static('web/js/jquery.elevateZoom-3.0.8.min.js')}}" type="text/javascript"></script>
+<script src="{{static('web/js/fancy.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+
+function plusOne(){
+  $("#qtn").html(parseInt($("#qtn").text())+1);
+}
+function minusOne(){
+  if(parseInt($("#qtn").text())>1){
+  $("#qtn").html(parseInt($("#qtn").text())-1);
+  }
+}
+
+
+    $(document).ready(function () {
+        $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: "active", imageCrossfade: true, loadingIcon: "http://www.elevateweb.co.uk/spinner.gif"});
+
+        $("#zoom_03").bind("click", function(e) {
+          var ez =   $('#zoom_03').data('elevateZoom');
+          ez.closeAll(); //NEW: This function force hides the lens, tint and window
+            $.fancybox(ez.getGalleryList());
+          return false;
+        });
+    $("#divide-slider").lightSlider({
+         gallery:true,
+         item:4,
+         thumbItem:0,
+         slideMargin:0,
+         speed:1200,
+         auto:true,
+         slideEndAnimation: true,
+         loop:true,
+		controls: true,
+        responsive: [{
+						breakpoint : 817,
+						settings: {
+							item: 3,
+							slideMove: 1,
+							sliderWidth: 300
+								}
+						}, {
+						breakpoint:666,
+						settings: {
+							item: 2,
+							slideMove: 1,
+							sliderWidth: 375
+							}
+						}, {
+						breakpoint: 480,
+						settings: {
+							item: 1,
+							slideMove: 1,
+							sliderWidth: 375
+							}
+						}],
+         onSliderLoad: function() {
+             $('#divide-slider').removeClass('cS-hidden');
+         }
+     });
+         $("#testomanial-slider").lightSlider({
+         gallery:true,
+         item:2,
+         thumbItem:0,
+         slideMargin: 0,
+         speed:1200,
+         auto:true,
+         loop:true,
+         slideEndAnimation: true,
+         pause: 5000,
+            responsive: [{
+						breakpoint:666,
+						settings: {
+							item: 1,
+							slideMove: 1
+							}
+						}],
+         onSliderLoad: function() {
+             $('#testomanial-slider').removeClass('cS-hidden');
+         }
+     });
+});
+
+
+$("#ratingForm").submit(function(e) {
+    // alert($("#ratingForm").serialize());
+    $.ajax({
+           type: "POST",
+           url: "{{ url('save-review', args=[plant.id]) }}",
+           data: $("#ratingForm").serialize(),
+           success: function(data){
+            $(document).toastr_success('Thank you for review.')
+            $("#ratingForm")[0].reset();
+            $('.write-review-box').hide();
+           },
+           error: function(data){
+             $(document).toastr_alert('Something went wrong.')
+             $("#ratingForm")[0].reset();
+             $('.write-review-box').hide();
+           }
+         });
+    e.preventDefault();
+});
+
+
+function add_or_remove_this_product(){
+  var id = $('#suplementry-product').val();
+  var quantity = 1;
+  // alert(id);
+  if (id != undefined && id != '' && id != null && id != 0 && id != '0'){
+    $.ajax({
+      url: "/addsuplementrypot/"+id+"/"+quantity,
+      type: 'GET',
+      headers: {'content-type': 'application/json'},
+      success: function (data) {
+        // alert(data);
+      },
+      error: function(res) {
+        // alert(res);
+      }
+    });
+  }
+}
+
+
+
+</script>
+<script>
+$("#shipinfo").click(function() {
+//  alert( "Handler for .click() called." );
+    $("li.tab-1, li.tab-2, li.tab-3, li.tab-4, li.tab-5").removeClass("active-tab");
+    $("div.tab-1, div.tab-2, div.tab-3, div.tab-4,div.tab-5").removeClass("active-content");
+    $("li.tab-6").addClass("active-tab");
+    $("div.tab-6").addClass("active-content");
+    $('html, body').animate({
+        scrollTop: $(this).offset().top-100
+    }, 600);
+});
+</script>
+{% endblock %}

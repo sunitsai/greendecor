@@ -1,0 +1,55 @@
+
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+ <div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="dashbord-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 dashbord">
+                <div class="col-sm-3 col-md-3 secondry-bg dashbord-menu">
+                    {% include 'web/dashboard-side.html.j2' %}
+                </div>
+                <div class="col-sm-9 dashbord-content cart-sec">
+                  <div class="col-xs-12 section-tilte no-gutter">
+                    <h3 class="title-head"><span>HI</span> {{request.user.username}}</h3>
+                  </div>
+                <div class="col-sm-12 add-plant">
+                  <div class="col-xs-12 text-left">
+                     <h5 class="title"><span>Add Plant </span>Quantity</h5>
+                  </div>
+                  <div class="col-xs-12">
+                    <form method="post">
+                        <div class="col-sm-8 col-xs-12">
+                          {{form.plant}}
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                          <!-- <input type="number" name="" class="input" Placeholder="Please Enter Quantity "> -->
+                          {{form.quantity}}
+                        </div>
+                        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                         <div class="col-sm-12 text-right col-xs-12">
+                             <div class="col-xs-12">
+                          <input type="submit" name="" value="submit" class="button">
+                                </div>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+</div>
+{% endblock %}

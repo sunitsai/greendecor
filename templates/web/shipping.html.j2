@@ -1,0 +1,606 @@
+{% extends 'base.html.j2' %}
+{% set totals = [0] %}
+{% for single_item in cartItems %}
+    {% if totals.append(totals.pop()+ (single_item["price"]*single_item["quantity"])) %}{% endif %}
+{% endfor %}
+
+{% block custom_script_seo %}
+  <!-- Event snippet for Example conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-123456789/AbC-D_efG-h12_34-567',
+      'value': {{totals[0]}},
+      'currency': 'INR'
+    });
+  </script>
+{% endblock %}
+
+{% block main_content %}
+<!-- main content here -->
+
+<script>
+
+  fbq('track', 'InitiateCheckout');
+
+</script>
+
+<div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<!--Shipping content start-->
+
+
+  <style>
+
+    .cart-sec .shipping-addr input.input{
+      margin-top: 0;
+    }
+
+    .cart-sec .shipping-addr label{
+      margin-top: 20px;
+      height: 30px;
+      font-size: 15px;
+    }
+
+   @media only screen and (min-width:768px){
+    #navbar{
+       visibility: hidden !important;
+    }
+    }
+
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .select-validation-color{
+        border-bottom-color:red !important;
+      }
+      /*.pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }*/
+    </style>
+
+
+
+
+<section class="scroll-first section-padding" id="cart-shipping-sec">
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12 cart-sec cart-shipping-sec">
+           <div class="col-sm-3 section-tilte">
+                <h3 class="title-head"><span>My</span>Cart</h3>
+            </div>
+            <div class="col-sm-9">
+                <div class="cart-tab">
+                    <p class="title">Cart</p>
+                </div>
+                <div class="cart-tab middle-tab cur-tab">
+                    <p class="title">Shipping </p>
+                </div>
+                <div class="cart-tab">
+                    <p class="title">Payment</p>
+                </div>
+            </div>
+            <div class="col-xs-12">
+
+
+
+            <form method="post" id="shipping_form" novalidate="">
+              <div class="col-sm-8 add-cart">
+                <div class="col-xs-12 shipping-addr">
+                  <div class="col-xs-12 form">
+                    <div class="no-gutter col-xs-12">
+                    <h6 class="title">Please Enter Address</h6>
+                    </div>
+
+
+
+                    <!-- <form method="post" id="my_form"> -->
+                      <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                      <div class="row">
+                      <div class="col-sm-6">
+                        <label for="">Name</label>
+                        {{form.shipping_name}}
+                      </div>
+
+                      <div class="col-sm-6">
+                        <label for="">Phone</label>
+                        {{form.shipping_phone}}
+                        <!-- <input type="text" class="input" Placeholder="Phone"> -->
+                      </div>
+                    </div>
+
+                      <div class="row">
+                      <div class="col-sm-6">
+                        <label for="">Email</label>
+                        {{form.shipping_email}}
+                        <!-- <input type="text" class="input" Placeholder="Phone"> -->
+                      </div>
+                      </div>
+
+                      <div class="row">
+                      <div class="col-sm-12">
+                        <label for="">House/Flat Number</label>
+                        {{form.shipping_address1}}
+                        <!-- <input type="text" class="input" Placeholder="Address Line 1"> -->
+                      </div>
+
+                      <div class="col-sm-12">
+                        <label for="">Enter Your Location</label>
+                        {{form.shipping_address2}}
+                        <!-- <input type="text" class="input" Placeholder="Address Line 2"> -->
+                      </div>
+                      </div>
+
+                      <div class="row">
+                      <div class="col-sm-6">
+                        <label for="">Select City</label>
+                        {{form.shipping_city}}
+                        <!-- <input type="text" class="input" Placeholder="City"> -->
+                        <p>We currently are operational in Delhi-NCR Only.</p>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <label for="">Pincode</label>
+                        {{form.shipping_pincode}}
+                        <!-- <input type="text" class="input" Placeholder="PIN Code"> -->
+
+                      <div class="">
+                        <label for="">State</label>
+                        {{form.shipping_state}}
+                      </div>
+                      </div>
+                      </div>
+
+
+                      <div class="col-sm-6 hidden">
+                        <input type="hidden" id="lat" name="lat" class="input" value="0.0" Placeholder="latitude">
+                        <input type="hidden" id="lng" name="lng" class="input" value="0.0" Placeholder="longitude">
+                      </div>
+
+                      <div class="col-sm-6 hidden">
+                        <p id="lctn"></p>
+                      </div>
+                      <input type="hidden" name="amount" id="amount" value="{% if gift_wrap=='true' %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+(25*cartItems|length)+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]+(25*cartItems|length)}}{% endif %} {% else %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]}}{% endif %}{% endif %}">
+                      <input type="hidden" name="total_ammount_after_coupon" id="total_ammount_after_coupon" value="{% if gift_wrap=='true' %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+(25*cartItems|length)+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]+(25*cartItems|length)}}{% endif %} {% else %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]}}{% endif %}{% endif %}">
+                      <input type="hidden" name="gross_amount" id="gross_amount" value="{{totals[0]}}">
+                      <input type="hidden" name="delivery_charge" id="delivery_charge" value="{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ delivery_charge_config[0].delivery_charge }}{% else %}{{0}}{% endif %}">
+                      <input type="hidden" name="coupon_discount" id="coupon_discount" value="">
+                      <input type="hidden" name="applied_coupon_code" id="applied_coupon_code" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 total-cart">
+
+
+                  <!-- <div class="col-xs-12 text-left cart-box">
+                          <h4 class="title">Options</h3>
+                      <div class="col-sm-7">
+
+                          <p class="title"><span>Coupons</span></p>
+                          {% if not request.user.is_authenticated %}
+                            <p class="sub-title">Log In to use account linked Coupons</p>
+                          {% endif %}
+                          {% if request.user.is_authenticated %}
+                            <input type="text" name="" value="" placeholder="Coupon Code">
+                          {% endif %}
+                      </div>
+                      <div class="col-sm-5">
+                         <a href="#" class="coupans button">Apply Coupons</a>
+                      </div>
+                  </div>
+                  <div class="col-xs-12 text-left cart-box gift-wrap">
+                      <div class="col-sm-9 cl-xs-9">
+                          <p class="title"><span>Gift Wrap for Rs <i class="fa fa-inr"></i> 25</span></p>
+                          <p class="sub-title">Some Text Below Here</p>
+                      </div>
+                      <div class="col-sm-3 col-xs-3">
+                          <input type="checkbox" class="checkbox">
+                      </div>
+                  </div> -->
+
+                  <div class="col-xs-12 no-gutter cart-head cart-box">
+                      <h4 class="title">Summary</h3>
+                  </div>
+                  {% if request.user.is_authenticated %}
+                  <div class="col-xs-12 text-left cart-box" id="coupon-box">
+                      <div class="col-sm-6">
+                          <p class="title"><span>Coupons</span></p>
+                            <input type="text" name="coupon_code" id="coupon_code" value="" placeholder="Coupon Code">
+                      </div>
+                      <div class="col-sm-6">
+                         <a onclick="applyCoupon()" id="app-btn" class="coupans button">Apply Coupons</a>
+                      </div>
+                  </div>
+                  {% endif %}
+
+                  <div id="summary_bar" class="col-xs-12 no-gutter cart-price">
+                    {% for item in cartItems.all() %}
+                      <p class="title">{{item.plant.name}} : <span><i class="fa fa-inr"></i> {{item.price*item.quantity}}</span></p>
+                      <!-- <p class="title">item 1 : <span><i class="fa fa-inr"></i> 300</span></p> -->
+                    {% endfor %}
+                    {% if gift_wrap=='true' %}
+                      <p class="title" id="gift_wrap_bar">Gift Wrap <span><i class="fa fa-inr"></i> {{25*cartItems|length}}</span></p>
+                    {% endif %}
+                    {% if totals[0]<=delivery_charge_config[0].max_amount %}
+                      <p class="title" id="delivery_charge_bar">Delivery Charge<span><i class="fa fa-inr"></i> {{delivery_charge_config[0].delivery_charge}}</span></p>
+                      <p class="f-d-notif" id="delivery_charge_notification">Order &#8377; {{delivery_charge_config[0].max_amount}} or above to Get FREE Delivery</p>
+                    {% endif %}
+                  </div>
+                <!-- <div class="col-xs-12 no-gutter secondry-bg cart-head coupan cart-box">
+                      <h4 class="title">Summary</h3>
+                      <p class="text">By Applying coupan code you get some promo balance or much. Do you have a coupn code?</p>
+                      <h6 class="text">Aplly here</h6>
+                      <form>
+                          <input type="text" class="input" Placeholder="Coupan Code">
+                          <input type="submit" class="button" value="Apply">
+                      </form>
+                  </div> -->
+                  <div class="col-xs-12 total-price cart-box">
+                    <p class="title">Total :
+                      <span> <i class="fa fa-inr"></i>
+                        <span id="total_amount">
+                          {% if gift_wrap=='true' %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+(25*cartItems|length)+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]+(25*cartItems|length)}}{% endif %} {% else %}{% if totals[0]<=delivery_charge_config[0].max_amount %}{{ totals[0]+delivery_charge_config[0].delivery_charge }}{% else %}{{ totals[0]}}{% endif %}{% endif %}
+                        </span>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="continue col-xs-12 text-center">
+                      <button type="submit" class="button form-submit">Continue <i class="fa fa-arrow-right"></i></button>
+                      <!-- <span onclick="submitForm()" class="button">Continue <i class="fa fa-arrow-right"></i></span> -->
+                  </div>
+              </div>
+            </form>
+            </div>
+
+
+
+
+    <!-- <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">
+          Search Your Location
+        </div>
+        <div id="type-selector" class="pac-controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked">
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment">
+          <label for="changetype-establishment">Establishments</label>
+
+          <input type="radio" name="type" id="changetype-address">
+          <label for="changetype-address">Addresses</label>
+
+          <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-strict-bounds" value="">
+          <label for="use-strict-bounds">Strict Bounds</label>
+        </div>
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text"
+            placeholder="Enter a location">
+      </div>
+    </div> -->
+
+
+            <div class="col-xs-12 hidden-xs" style="height:300px; width:70%;" id="map">
+            </div>
+            <div id="infowindow-content">
+              <img src="" width="16" height="16" id="place-icon">
+              <span id="place-name"  class="title"></span><br>
+              <span id="place-address"></span>
+            </div>
+
+        </div>
+    </div>
+ </div>
+</section>
+
+    <!--Shipping content end-->
+</div>
+
+<style>
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+}
+
+
+     @media only screen and (max-width:768px){
+    .top-footer{
+        display: none;
+    }
+    }
+
+</style>
+
+
+{% endblock %}
+{% block custome_script %}
+<script>
+  var componentForm = {
+    locality: 'long_name',
+    administrative_area_level_1: 'short_name',
+    postal_code: 'short_name'
+  };
+  function initialize(){
+    geocoder = new google.maps.Geocoder();
+  }
+  function initMap() {
+        initialize();
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var myLatLong = {lat: 0 , lng: 0};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: myLatLong,
+              zoom: 8
+            });
+            var marker = new google.maps.Marker({
+              position: myLatLong,
+              map: map,
+              title: 'Click to zoom'
+            });
+            var input = document.getElementById('id_shipping_address2');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo('bounds', map);
+            var infowindow = new google.maps.InfoWindow();
+            var infowindowContent = document.getElementById('infowindow-content');
+            infowindow.setContent(infowindowContent);
+
+            autocomplete.addListener('place_changed', function() {
+              infowindow.close();
+              marker.setVisible(false);
+              var place = autocomplete.getPlace();
+
+              $('#lctn').text(place.formatted_address);
+              document.getElementById('lat').value = place.geometry.location.lat();
+              document.getElementById('lng').value = place.geometry.location.lng();
+              if (!place.geometry) {
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+              }
+
+              // If the place has a geometry, then present it on a map.
+              if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+              } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);  // Why 17? Because it looks good.
+              }
+              marker.setPosition(place.geometry.location);
+              marker.setVisible(true);
+
+              var address = '';
+              if (place.address_components) {
+                address = [
+                  (place.address_components[0] && place.address_components[0].short_name || ''),
+                  (place.address_components[1] && place.address_components[1].short_name || ''),
+                  (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+                fillAddressComponent(place);
+              }
+              infowindowContent.children['place-icon'].src = place.icon;
+              infowindowContent.children['place-name'].textContent = place.name;
+              infowindowContent.children['place-address'].textContent = address;
+              infowindow.open(map, marker);
+            });
+
+            // Sets a listener on a radio button to change the filter type on Places
+            // Autocomplete.
+            function setupClickListener(id, types) {
+              var radioButton = document.getElementById(id);
+              radioButton.addEventListener('click', function() {
+                autocomplete.setTypes(types);
+              });
+            }
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            console.log(position);
+            codeLatLng(pos);
+            document.getElementById('lat').value = pos.lat;
+            document.getElementById('lng').value = pos.lng;
+            map.setCenter(pos);
+            marker.setPosition(pos);
+
+          }, function(error) {
+            console.log('permission  denied');
+            // handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          console.log('browser does not support geolocation');
+        }
+  }
+
+
+  function codeLatLng(latlng) {
+      geocoder.geocode({'latLng': latlng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        $('#lctn').text(results[0].formatted_address);
+        fillAddressComponent(results[0]);
+        document.getElementById('id_shipping_address2').value = results[0].formatted_address;
+        } else {
+          alert("Geocoder failed due to: " + status);
+        }
+      });
+  }
+
+
+  function fillAddressComponent(place){
+    for (var i = 0; i < place.address_components.length; i++) {
+      var addressType = place.address_components[i].types[0];
+      if (componentForm[addressType]) {
+        var val = place.address_components[i][componentForm[addressType]];
+        if(addressType=='locality'){
+          document.getElementById('id_shipping_city').value = val;
+          if($('#id_shipping_city').val()==undefined || $('#id_shipping_city').val()==''){
+            document.getElementById('id_shipping_city').value = '';
+            $('#id_shipping_city').addClass('select-validation-color');
+          } else {
+            $('#id_shipping_city').removeClass('select-validation-color');
+          }
+        }
+        if(addressType=='postal_code'){
+          document.getElementById('id_shipping_pincode').value = val;
+        }
+        if(addressType=='administrative_area_level_1'){
+          document.getElementById('id_shipping_state').value = val;
+        }
+      }
+    }
+  }
+
+  $('#id_shipping_city').on('change', function() {
+    if($('#id_shipping_city').val()==undefined || $('#id_shipping_city').val()==''){
+      document.getElementById('id_shipping_city').value = '';
+      $('#id_shipping_city').addClass('select-validation-color');
+    } else {
+      $('#id_shipping_city').removeClass('select-validation-color');
+    }
+  });
+
+  $('#shipping_form').submit(function(e){
+    if($('#id_shipping_city').val()==undefined || $('#id_shipping_city').val()==''){
+      document.getElementById('id_shipping_city').value = '';
+      $('#id_shipping_city').addClass('select-validation-color');
+      e.preventDefault();
+    }
+  });
+
+
+  function applyCoupon(){
+    code= document.getElementById('coupon_code').value;
+    applied_coupon_code = $('#applied_coupon_code').val();
+    if(code==''||code==undefined){
+      $(document).toastr_alert('Please Enter Valid Coupon Code');
+      document.getElementById('coupon_code').focus();
+      return false;
+    }
+    if (applied_coupon_code===code){
+      $(document).toastr_alert('Coupon Code Already applied');
+      document.getElementById('coupon_code').focus();
+      return false;
+    }
+    total_amount = document.getElementById('total_ammount_after_coupon').value;
+    amount = document.getElementById('gross_amount').value;
+    $.ajax({
+      url: "/checkcouponcode/",
+      type: 'GET',
+      headers: {'content-type': 'application/json'},
+      data: {'code':code,'amount':amount},
+      success: function (data) {
+        $(document).toastr_success('Coupon Code '+code+' successfully Applied. Rs. '+data+' Off. ');
+        document.getElementById('amount').value = total_amount-parseInt(data);
+        document.getElementById('applied_coupon_code').value = code;
+        document.getElementById('coupon_discount').value = data;
+        $('#discount_bar').remove()
+        $('#summary_bar').append('<p class="title" id="discount_bar">Coupon Discount <span>-&nbsp;<i class="fa fa-inr"></i>&nbsp; <span id="discount_bar_price">'+data+'</span></span></p>');
+        $("#app-btn").text('Coupon Applied');
+        // check for delivery charge
+        var max_delivery_amount = parseInt('{{delivery_charge_config[0].max_amount}}');
+        if(amount>max_delivery_amount && parseInt(document.getElementById('amount').value) < max_delivery_amount){
+          $('#delivery_charge_notification').remove();
+          $('#delivery_charge_bar').remove();
+          $('#summary_bar').append('<p class="title" id="delivery_charge_bar">Delivery Charge<span><i class="fa fa-inr"></i> {{delivery_charge_config[0].delivery_charge}}</span></p>');
+          $('#summary_bar').append('<p class="f-d-notif" id="delivery_charge_notification">Order &#8377; {{delivery_charge_config[0].max_amount}} or above to Get FREE Delivery</p>');
+          $('#total_amount').text(parseInt(document.getElementById('amount').value) + parseInt('{{delivery_charge_config[0].delivery_charge}}'));
+        } else {
+          $('#total_amount').text(document.getElementById('amount').value);
+        }
+      },
+      error: function(data){
+        // document.getElementById('coupon_code').value = '';
+        $(document).toastr_alert(data.responseText)
+      }
+    });
+  }
+  $( window ).load(function() {
+    {% if request.user.is_authenticated %}
+    '{%if request.user.userprofile and request.user.userprofile.name!=None %}'
+      document.getElementById('id_shipping_name').value = '{{request.user.userprofile.name}}'
+    '{% endif %}'
+
+    '{%if request.user.email!=None %}'
+      document.getElementById('id_shipping_email').value = '{{request.user.email}}'
+    '{% endif %}'
+
+    '{%if request.user.userprofile and request.user.userprofile.mobile!=None %}'
+      document.getElementById('id_shipping_phone').value = '{{request.user.userprofile.mobile}}'
+    '{% endif %}'
+
+    '{%if request.user.userprofile and request.user.userprofile.address_line1!=None %}'
+      document.getElementById('id_shipping_address1').value = '{{request.user.userprofile.address_line1}}'
+    '{% endif %}'
+    {% endif %}
+  });
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz1edliQCI3nHdvh0P4iroUE80i8djpLA&libraries=places&callback=initMap"
+        async defer></script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html.j2' %}
+
+{% block facebook_pixel_and_gtm %}
+<!-- Event snippet for green_decor_conversion_website conversion page -->
+<script> gtag('event', 'conversion', {'send_to': 'AW-818632689/9rVkCNCKxYsBEPGvrYYD'}); </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5Q5C7LK');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Facebook Pixel Code>-->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2025259167689147');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2025259167689147&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+{% endblock %}
+
+
+{% block custom_script_seo %}
+<script>
+ fbq(‘track’, ‘Purchase’);
+ fbq(‘track’, ‘Lead’);
+</script>
+{% endblock %}
+{% block main_content %}
+<div class="main-content inner success-page">
+<section class="scroll-first section-padding" id="successful">
+    <div class="container">
+        <div class="col-sm-12 dashbord success-page">
+                <div class="col-sm-10 col-centered dashbord-content">
+                <div class="col-xs-12 success-content">
+                <div class="col-sm-12 text-center">
+                    <h4 class="title">Thank you for contacting us!</h4>
+                </div>
+
+                 <div class="col-sm-12 col-xs-12 text-center">
+                    <a class="button large" href="{{url('corporate-gifting')}}">Go back to corporate gifting page <i class="fa fa-angle-right"></i></a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+</div>
+
+{% endblock %}

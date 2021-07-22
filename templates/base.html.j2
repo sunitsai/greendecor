@@ -1,0 +1,1615 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+      {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,10">
+        <title>{{title}}</title>
+        <meta name="robots" content="index,follow">
+        <meta name="google-site-verification" content="DxHdgRuhhV_U4aJRXOtk42OyOmy0vb70Cq1R-MpmkLA" />
+		    <meta name="title" content="{{title}}">
+        <meta name="description" content="{{meta_desc}}">
+        <meta name="keyword" content="{{meta_keyword}}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+        <link rel="apple-touch-icon" href="{{ static('web/img/apple-touch-icon.png') }}">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{static('web/img/favicon/apple-icon-57x57.png')}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{static('web/img/favicon/apple-icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{static('web/img/favicon/apple-icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{static('web/img/favicon/apple-icon-76x76.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{static('web/img/favicon/apple-icon-114x114.png')}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{static('web/img/favicon/apple-icon-120x120.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{static('web/img/favicon/apple-icon-144x144.png')}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{static('web/img/favicon/apple-icon-152x152.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{static('web/img/favicon/apple-icon-180x180.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{static('web/img/favicon/android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{static('web/img/favicon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{static('web/img/favicon/favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{static('web/img/favicon/favicon-16x16.png')}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{static('web/img/favicon/ms-icon-144x144.png')}}">
+        <meta name="theme-color" content="#ffffff">
+      <!--   <meta name="twitter:card" content="Green Decor - Buy Plants Online in Delhi NCR" />
+        <meta name="twitter:site" content="@nytimesbits" />
+        <meta name="twitter:creator" content="@nickbilton" /> -->
+<!--
+        <meta property="og:title" content="Welcome to Greendecor.in ">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content=" Greendecor.in - One Stop Shop for all your gardening Needs. ">
+        <meta property="og:url" content="http://www.greendecor.in">
+        <meta property="og:image" content="http://54.202.1.195/static/web/img/logo.png">
+-->
+        <link rel="stylesheet" href="{{ static('web/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ static('web/css/bootstrap-theme.min.css') }}">
+        <link rel="stylesheet" href="{{ static('web/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ static('web/css/lightslider.css') }}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ static('web/css/mainv1.css') }}">
+        <link rel="stylesheet" href="{{ static('web/review/css/style.css') }}">
+        <script src="{{ static('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+        <script src="{{ static('web/js/vendor/jquery-1.11.2.min.js') }}"></script>
+        <script src="{{ static('web/js/lightslider.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script src="//load.sumome.com/" data-sumo-site-id="28121f0b84bc55690096f1c84565236a0e70eede0d07ed08f6891aeca0e1ec67" async="async" > </script>
+
+
+
+<script type="text/javascript">
+
+    window.smartlook||(function(d) {
+
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+
+    c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+
+    })(document);
+
+    smartlook('init', '3ef0c54188b71a560051c3956850dfcfda3c0c21');
+
+</script>
+
+
+
+
+        <!--  wigzo xode start  -->
+<!--
+        <script>
+        (function(w,i,g,z,o){
+            var a,m;w['WigzoObject']=o;w[o]=w[o]||function(){
+            (w[o].q=w[o].q||[]).push(arguments)},w[o].l=1*new Date();w[o].h=z;a=i.createElement(g),
+            m=i.getElementsByTagName(g)[0];a.async=1;a.src=z;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//app.wigzo.com/wigzo.compressed.js','wigzo');
+        wigzo ('configure', 'fd8c1d73-0185-4a25-afa9-2611b9582a43');
+
+
+
+        {% if request.user.is_authenticated %}
+          wigzo ("identify", {
+            email: "request.user.email",
+            phone: "request.user.username",
+            fullName: "request.user.userprofile.name"
+          });
+        {% endif %}
+        </script>
+-->
+        <!-- End wigzo xode start  -->
+
+
+
+
+  {% block facebook_pixel_and_gtm %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5Q5C7LK');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Facebook Pixel Code -->
+
+    <script>
+
+    !function(f,b,e,v,n,t,s)
+
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+    n.queue=[];t=b.createElement(e);t.async=!0;
+
+    t.src=v;s=b.getElementsByTagName(e)[0];
+
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '2025259167689147');
+
+    fbq('track', 'PageView');
+
+    </script>
+
+    <noscript><img height="1" width="1" style="display:none"
+
+    src="https://www.facebook.com/tr?id=2025259167689147&ev=PageView&noscript=1"
+
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+  {% endblock %}
+
+
+
+
+
+      <!-- Google Code for Remarketing Tag -->
+
+<!--------------------------------------------------
+
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+
+--------------------------------------------------->
+
+<script type="text/javascript">
+
+/* <![CDATA[ */
+
+var google_conversion_id = 944680957;
+
+var google_custom_params = window.google_tag_params;
+
+var google_remarketing_only = true;
+
+/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+</script>
+
+<noscript>
+
+<div style="display:inline;">
+
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/944680957/?guid=ON&amp;script=0"/>
+
+</div>
+
+</noscript>
+
+      {% endblock %}
+
+
+
+    {% block og_content %}
+
+    <meta property="og:title" content="Buy Plants Online Delhi, Best Online Plant Nursery in India | Green Decor">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Buy all types of garden fresh plants online in Delhi NCR at the best price at Green Decor. Green Decor is one stop online plant nursery in India to buy indoor and outdoor plants, seeds and pots online in Delhi, Gurgaon and Noida."> <meta property="og:url" content="https://www.greendecor.in">
+    <meta property="og:image" content="https://www.greendecor.in/static/web/img/logo.png">
+
+    {% endblock %}
+
+
+      {% block custome_head %}
+
+      {% endblock %}
+
+
+
+    </head>
+<body>
+  {% block custom_script_seo %}
+
+  {% endblock %}
+
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q5C7LK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+ <div class="main-container" id="main">
+    {% block header %}
+    <header>
+    <div class="mini-header">
+        <div class="container">
+        <div class="col-md-12">
+            <div class="hidden-xs col-sm-3 social">
+                <a href="https://www.facebook.com/greendecor.in/" target="_blank" class="fa fa-facebook"></a>
+<!--                <a href="#" class="fa fa-google-plus"></a>-->
+<!--                <a href="#" class="fa fa-pinterest-p"></a>-->
+                <a href="http://instagram.com/greendecor09" target="_blank" class="fa fa-instagram"></a>
+            </div>
+            <div class="col-xs-6 no-pad-reponsive col-sm-4">
+                <h6 class="text">
+                  <a style="color:white;padding: 5px;font-size: 13px;border: 1px solid #38843b;background: #444;" href="https://api.whatsapp.com/send?phone=919953572573&text=I%27m%20interested%20in%20GreenDecor%20products.%20Please%20guide%20me%20through%20it">
+                    <i class="fa fa-whatsapp" style="color: #fff;font-size: 20px;color: #62d467;"></i>
+                    <span style="font-size: 15px;color: #62d467;padding: 0px 4px;">Whatsapp:</span>+91-9953572573
+                  </a>
+                </h6>
+            </div>
+            <div class="col-xs-6 no-pad-reponsive col-sm-5">
+                <a href="mailto:info@greendecor.in"><h6 class="text email"><i class="fa fa-envelope-o"></i> <span>Email Us : </span> info@greendecor.in</h6></a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+        <div class="navbar-header col-sm-2 col-md-2">
+        <!--responsive navigation-->
+          <button id="ChangeToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <!--menu icon-->
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+            <!--menu icon closed-->
+          </button>
+          <a class="navbar-brand" href="{{ url('index') }}"><img src="{{ static('web/img/logo.png') }}" alt=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse menu collapse col-sm-7 col-md-7">
+                  <ul class="menu-1">
+                      <li class="dropdown" ><a href="{{ url('index') }}"> Home </a>
+
+                      </li>
+
+                     <li class="dropdown" ><a href="#" data-toggle="dropdown">Plant Categories  <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu full-width">
+							  			<div class="col-sm-7 col-xs-12">
+												<h5 class="title">Plant Categories</h5>
+										<div class="col-sm-4 col-xs-12" id="cat-1">
+
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12" id="cat-2">
+
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12" id="cat-3">
+
+
+                                        </div>
+
+<li> <a href="{{url('diwali-gifting-plants')}}" class="extra-li-menu"><i class="fa fa-gift"></i>&nbsp;Diwali Plants</a></li>
+
+<!--
+                                        <div class="col-sm-3 col-xs-12" id="cat-4">
+
+                                        </div>
+-->
+                                        </div>
+							  			<div class="col-sm-5 col-xs-12 no-gutter" style="background:#f5f5f5 !important;height:100%; padding-bottom:20px;">
+										<div class="col-sm-6 col-xs-12">
+												<h5 class="title">Popular Categories</h5>
+                                        </div>
+
+                                      <div class="col-sm-6 col-xs-12">
+                                        <div class="button-cus">
+                                          <a class="button btn" href="https://www.greendecor.in/shop-plants-from-online-nursery/">What's New</a>
+                                        </div>
+                                      </div>
+
+										<a href="/category/buy-airpurifing-online-in-delhi/">
+                                            <div class="col-sm-6 col-xs-12 pop-cat">
+                                           		<img src="{{ static('web/img/air-purfy-home.png') }}"/>
+                                           		<p class="text-center">Air Purifying Plants</p>
+											</div>
+
+											</a>
+
+											<a href="/category/buy-bonsai-online-in-delhi/">
+
+											<div class="col-sm-6 col-xs-12 pop-cat">
+												<img src="https://www.greendecor.in/media/images/il_430xN.53043192.jpg"/>
+												<p class="text-center">Bonsai Plants</p>
+											</div>
+                                            </a>
+                                        </div>
+<!--
+                            {% for cat in categories.all() %}
+                              {% if cat.parent_category==None %}
+                                <li><a href="{{url('category_details',args=[cat.id])}}">{{cat.name}}</a></li>
+                              {% endif %}
+                            {% endfor %}
+-->
+                          </ul
+                      ></li>
+
+					   <li class="dropdown" ><a href="#" data-toggle="dropdown">Accessories <i class="fa fa-angle-down"></i></a>
+					  	 <ul class="dropdown-menu" id="cat-6">
+                {% for cat in categories.all() %}
+                  {% if cat.parent_category == None and cat.category_type=='Accessories' %}
+                    <li><a href="/category/{{cat.slug}}/">{{cat.name}}</a></li>
+                  {% endif %}
+							  {% endfor %}
+						   </ul>
+					  </li>
+
+<!--
+            NEW MENU ADDED
+
+-->
+             <li class="dropdown" ><a href="#" data-toggle="dropdown">Gifting <i class="fa fa-angle-down"></i></a>
+					  	 <ul class="dropdown-menu" id="cat-6">
+                {% for cat in categories.all() %}
+                  {% if cat.parent_category == None and cat.category_type=='Gifting' %}
+                    <li><a href="/category/{{cat.slug}}/">{{cat.name}}</a></li>
+                  {% endif %}
+							  {% endfor %}
+						   </ul>
+					  </li>
+
+                      <li class="dropdown" ><a class="highlighted-menu-item" href="{{url('corporate-gifting')}}">Corporate Gifting</a></li>
+
+                      <li class="dropdown visible-xs" ><a class="highlighted-menu-item" href="{{url('diwali-gifting-plants')}}"><i class="fa fa-gift"></i>&nbsp;Diwali Plants</a></li>
+
+                      <li class="dropdown hidden-md hidden-lg"><a href="{{url('shop-plants-from-online-nursery')}}">What's New</a></li>
+
+                      <li class="dropdown" ><a href="{{url('about-us')}}">About Us</a></li>
+
+                      <li class="dropdown" ><a target="_blank" href="http://blog.greendecor.in" >Blog </a>
+                      </li>
+
+                  </ul>
+
+          </div>
+         <div class="col-sm-3 user-detail col-md-3 no-pad-reponsive text-right">
+                  <ul class="menu-1">
+                     <li class="dropdown">
+                      <a onclick="openSearch()"><i class="fa fa-search"></i> Search</a>
+                   </li>
+                    <li class="dropdown">
+                      <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i> <span id="cart_value">{{cartCount}}</span></a>
+                   </li>
+
+                    <li class="dropdown">
+                      {% if request.user.is_authenticated %}
+                        <a href="" data-toggle="dropdown"><i class="fa fa-user-o"></i><i class="fa fa-angle-down"></i> <span>Hi User !</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url('dashboard')}}">My Account</a></li>
+                            <li><a href="{{url('change-password')}}">Settings</a></li>
+                            <li><a href="{{url('logout')}}">Log Out</a></li>
+                          </ul>
+                      {% endif %}
+                      {% if not request.user.is_authenticated %}
+                        <a href="{{url('login')}}"><i class="fa fa-user-o"></i></a>
+                      {% endif %}
+                   </li>
+                  </ul>
+
+                  <ul id="navigation-new" class="navigation-new visible-lg visible-md visible-xs">
+                      <li class="home">
+                          <div class="demo" title="Home">
+
+                            <button title="Close" id="close" class="close"><i class="fa fa-close"></i></button>
+
+
+
+                              <div class="row">
+                                {% if offer_slider %}
+                                  <div class="col-md-1 col-xs-1 text-wrap">
+                                      <p>{{offer_slider.heading}}</p>
+                                  </div>
+                                  <div class="col-md-8 col-xs-6 shadow" style="padding: 12px 15px;">
+                                      <div class="row">
+                                          <div class="col-md-3 col-xs-4">
+                                            <img src="/media/{{ offer_slider.image }}" class="img-responsive" alt="">
+                                          </div>
+                                          <div class="col-md-8 col-xs-7">
+                                              <div class="pull-left">
+                                                  <span class="text">{{offer_slider.title}}</span>
+                                                <br />  <span class="text subhead"><a href="{{offer_slider.link}}">{{offer_slider.link_text}}</a></span>
+                                                      <!-- <form action="https://www.analytixlabs.co.in/announcement" method="post" class="" id="general_form">
+                                                          <input type="hidden" name="anc_id" value="6">
+                                                          <input type="submit" name="announcement" value="Download Here" class="link"><span><img src="https://www.analytixlabs.co.in/assets/front/img/announcements-icon.jpg"></span>
+                                                      </form> -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                {% endif %}
+                              </div>
+
+
+
+
+                          </div>
+                      </li>
+                  </ul>
+
+            </div>
+        </div><!--/.navbar-collapsse -->
+      </div>
+      </div>
+    </nav>
+  </header>
+     <!--/.search container -->
+    <div class="search" id="search-modal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-box col-xs-12 no-gutter">
+                        <form autocomplete="off">
+<!--                            <span>You can search Plants by Uses, Categories and Tags.</span>-->
+                            <input type="text" placeholder="Search Plants" name="query" id="search-boxs" autocomplete="off" class="input">
+                            <input type="button" onclick="redirectSearch()" class="button btn-search hidden-xs" value="Search"/>
+
+                            <input type="button" onclick="redirectSearch()" class="button btn-search visible-xs" value="Search"/>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-sm-7 tags-box">
+						 <div class="content-hollow padding-bottom col-xs-12 border-right no-gutter padding-bottom-15" id="placements">
+
+                        </div>
+                    </div>
+					<div class="content-hollow padding-bottom col-sm-5 hidden-xs" >
+                          <div class="content-box col-xs-12 no-gutter padding-bottom-15">
+                            	<h3 class="title-head font-size-16">season </h3>
+							</div>
+							<div id="seaso"></div>
+                        </div>
+					<div class="content-type category-search col-xs-12 no-gutter hidden-xs">
+                            <div class="content-box padding-bottom category-search padding-bottom-15 padding-top-15 border-right col-xs-7 no-gutter">
+                         		<h3 class="title-head font-size-16" style="margin-top:10px">fragrance  </h3>
+									<div id="fragranc"></div>
+							</div>
+							<div class="content-type category-search hidden-xs padding-bottom-15 padding-top-15 col-xs-5">
+								<div class="content-box col-xs-12 no-gutter">
+									<h3 class="title-head font-size-16" style="margin-top:10px">Maintenance  <span>Level</span></h3>
+									<div id="maintenance"></div>
+								</div>
+							</div>
+                        </div>
+				</div>
+
+<!--
+				<div class="col-md-12 category-search">
+                    <div class="content-box col-xs-12 no-gutter">
+                            <h3 class="title-head font-size-18">Browse by <span>Category</span></h3>
+                    </div>
+                     <div class="content-hollow col-xs-12 no-gutter">
+						 {% for cat in categories.all() %}
+                            <div class="hollow-button">
+                                <a href="{{url('category_details',args=[cat.slug])}}" class="button">{{cat.name}}</a>
+                            </div>
+
+						 {%endfor%}
+
+                       </div>
+                </div>
+-->
+            </div>
+        </div>
+        <div class="close-modal col-md-12">
+            <i class="fa fa-close"></i>
+        </div>
+    </div>
+     <div class="toastr" id="toastr">
+         <h3><i class="fa fa-check"></i> <span class="toastr-content"></span></h3>
+     </div>
+    <!--/ . Search container end -->
+    {% endblock %}
+
+
+
+    {% block main_content %}
+      <!-- content start-->
+      <div class="main-content index">
+      <!-- div class main content start-->
+      <!--banner start-->
+     <section id="banner">
+            <div class="col-md-12 no-gutter banner">
+               <div class="item">
+                <ul id="content-slider" class="content-slider">
+
+<a href="https://www.greendecor.in/category/buy-airpurifing-online-in-delhi/">
+                    <li>
+                    <div class="slider-image">
+                      <img src="{{ static('web/img/banner.jpg') }}">
+                    </div>
+                      <div class="slider-content">
+                         <div class="content">
+<!--
+                        <h1 style="padding-top: 11px;">Buy Indoor Plants Online</h1>
+                        <p>Composer for healthy planet</p>
+-->
+<!--                         <button class="button btn" onclick="openSearch()" role="button">Buy Now &raquo;</button>-->
+                         </div>
+                      </div>
+                    </li>
+                    </a>
+
+                    <a href="https://www.greendecor.in/corporate-gifting/">
+ <li>
+                    <div class="slider-image">
+                      <img src="{{ static('web/img/home-banner-cg.jpg') }}">
+                    </div>
+                      <div class="slider-content">
+                       <div class="content">
+                        <h2>Corporate Gifting</h2>
+<!--                        <p>Composer for healthy planet</p>-->
+<!--                            <button class="button btn" onclick="openSearch()" role="button">Buy Now &raquo;</button>-->
+                           </div>
+                      </div>
+                    </li>
+                    </a>
+
+
+<a href="https://www.greendecor.in/shop-plants-from-online-nursery/">
+                    <li>
+                    <div class="slider-image">
+                      <img src="{{ static('web/img/home-banner5.jpg') }}">
+                    </div>
+                      <div class="slider-content">
+                       <div class="content">
+<!--
+                        <h1 style="padding-top: 11px;">Corporate Gifting</h1>
+                        <p>Composer for healthy planet</p>
+                            <a class="button btn" href="/corporate-gifting" role="button">Buy Now &raquo;</a>
+-->
+                           </div>
+                      </div>
+                    </li>
+                    </a>
+                </ul>
+                <div class="search-slider-box">
+                    <form method="get" action="/search/" id="searchform">
+                        <input type="text" class="search-input" autocomplete="false" name="query" id="query" placeholder="Search Plant"><i onclick="searchFormSubmit()" class="fa fa-search"></i>
+                    </form>
+                </div>
+        </div>
+        </div>
+      </section>
+      <div class="clearfix"></div>
+      <!--banner end-->
+      <!-- /container -->
+      <section class="scroll-first section-padding" id="about-sec">
+        <div class="container">
+            <div class="row about-sec">
+                <div class="col-md-12 col-xs-12">
+                  <div class="col-xs-12 col-sm-4 content">
+                    <div class="image-box">
+                      <img src="{{ static('web/img/second-scroll.jpg') }}" alt="">
+                    </div>
+                    <div class="content-box">
+                      <h3 class="title-head"><span>Air </span>Purifier</h3>
+                        <p class="title">Green Decor specializes in providing indoor and outdoor plants for home decor and business spaces. At Green Decor you get the best species of plants and styles to choose from.</p>
+                        <a class="button btn" href="{{url('category_details',args=['buy-airpurifing-online-in-delhi'])}}" role="button">Shop Now</a>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                    <div class="col-xs-12 no-gutter">
+                      <div class="col-xs-4 image-half-box overlay-box">
+                        <a href="{{url('category_details',args=['buy-medicinal-online-in-delhi'])}}">
+                          <img src="{{ static('web/img/medicinal-plants.jpg') }}" alt="">
+                          <div class="hover-overlay">
+                            <h5 class="h4">Medicinal</h5>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col-xs-4 image-half-box overlay-box">
+                        <a href="{{url('category_details',args=['buy-bonsai-online-in-delhi'])}}">
+                          <img src="{{ static('web/img/second-scroll-2.jpg') }}" alt="">
+                          <div class="hover-overlay">
+                            <h5 class="h4">Bonsai</h5>
+                          </div>
+                        </a>
+                      </div>
+
+                         <div class="col-xs-4 image-half-box overlay-box">
+                        <a href="{{url('category_details',args=['buy-succulent-online-in-delhi'])}}">
+                          <img src="{{ static('web/img/succulent-plant-home.jpg') }}" alt="">
+                          <div class="hover-overlay">
+                            <h5 class="h4">Succulents</h5>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 no-gutter padding-top-20">
+                <div class="col-xs-6 overlay-box image-full-width">
+                          <a href="{{url('category_details',args=['buy-money-magnet-online-in-delhi'])}}">
+                            <img src="{{ static('web/img/money-plant.jpg') }}" alt="">
+                            <div class="hover-overlay width-95">
+                              <h5 class="h4">Money Magnets</h5>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-xs-6 overlay-box image-full-width">
+                          <a href="{{url('category_details',args=['buy-cactus-online-in-delhi'])}}">
+                            <img src="{{ static('web/img/Cactus-Plants.jpg') }}" alt="">
+
+                                <div class="hover-overlay width-95">
+                              <h5 class="h4">Cactus</h5>
+                            </div>
+                          </a>
+                        </div>
+                    </div>
+                    </div>
+
+
+                </div>
+              </div>
+			 <!-- <div class="row">
+				<div class="col-xs-12 text-center">
+                        <p style="color: red;margin-top: 20px;">Deliveries are halted temporarily due to Lockdown.</p>
+                </div>
+			  </div> -->
+        </div>
+      </section>
+
+      <section>
+          <div class="container">
+		  	<div class="row">
+              <div class="col-md-10 col-md-offset-1 cta-home-strip text-center">
+                  <p><i class="fa fa-gift"></i> &nbsp;Do Checkout Exciting <span>Plant Combos</span> &nbsp;&nbsp; <a href="/category/combo/" class="btn"> Plant Combos</a> </p>
+              </div>
+          </div>
+		  </div>
+      </section>
+      <!--product section-->
+      <section id="product-sec" class="secondry-bg section-padding product-sec section-margin third-scroll">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-12 section-title text-center">
+                <h3 class="title-head"><span>New </span>Products</h3>
+              </div>
+              <div class="col-md-12">
+               <div class="item">
+                <ul id="divide-slider" class="divide-slider">
+                  {% for plant in plants.all() %}
+                    <li>
+                      <div class="card">
+                          <a href="{{ url('plant_details', args=[plant.slug]) }}">
+                          <div class="slider-image">
+                            {% if plant.images.all()|length>0 %}
+                              <img src="/media/{{ plant.images.all()[0].image }}" alt="{{ plant.images.all()[0].alt }}" title="{{ plant.images.all()[0].title }}">
+                            {% endif %}
+                          </div>
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+                        </a>
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content">
+                              <a href="{{ url('plant_details', args=[plant.slug]) }}">
+                              <h6 class="title">{{plant.name}}</h6>
+                              <h6 class="price"><i class="fa fa-inr"></i> {{plant.actual_price}}</h6>
+                              <h6 class="price active-price"><i class="fa fa-inr"></i> {{plant.selling_price}}</h6>
+                              </a>
+                              <div class="hollow-button">
+                                {% if plant.stock %}
+                                  <a id="ga-gd-tracking" onclick="buy_now({{plant.id}},1)" class="button ga-gd-tracking"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                                {% else %}
+                                  <span class="button no-stock-btn ">Out of Stock</span>
+                                {% endif %}
+                              </div>
+                          </div>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+               </div>
+              </div>
+           </div>
+         </div>
+      </section>
+      <!--product section end-->
+      <!--about green decor section-->
+
+
+
+
+
+      <section id="product-sec-inner" class="section-padding product-sec section-margin fifth-scroll">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 section-title text-center">
+                <h3 class="title-head"><span>Browse </span>More Categories</h3>
+              </div>
+                <div class="col-md-12">
+                <div class="item">
+                  <ul id="divide-slider-category" class="divide-slider">
+                    {% for cat in categories.all() %}
+                      <li>
+                        <a href="{{url('category_details',args=[cat.slug])}}">
+                          <div class="card">
+                            <div class="slider-image">
+                              <img src="/media/{{cat.thumbnail}}">
+                            </div>
+                            <div class="content">
+                              <h6 class="price active-price">{{cat.name}}</h6>
+                              <!-- <p>Composer for healthy planet</p> -->
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+
+                    {% endfor %}
+
+                  </ul>
+        </div>
+                </div>
+            </div>
+          </div>
+      </section>
+
+<section id="more-stuff" class="section-padding accessories-sec section-margin fifth-scroll">
+          <div class="container">
+            <div class="row more-stuff-sec">
+              <div class="col-md-12 section-title text-center">
+                <h3 class="title-head"><span>Browse </span> Accessories</h3>
+              </div>
+                <div class="col-md-12 more-stuff">
+
+                         <div class="card card-v2">
+                          <a href="/category/buy-gardening-tools-online-in-delhi/">
+                          <div class="card-v2-image">
+                              <img src="{{static('web/img/tools_360.jpg')}}">
+                          </div>
+<!--
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+-->
+
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content content-bottom">
+                              <h6 class="title">Tools</h6>
+<!--                            <p class="text">(Comming Soon)</p>-->
+                          </div>
+							   </a>
+                      </div>
+
+                         <div class="card card-v2">
+                          <a href="/category/buy-soil-online-in-delhi/">
+                          <div class="card-v2-image">
+                              <img src="{{static('web/img/seeds-final_360.jpg')}}">
+                          </div>
+<!--
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+-->
+
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content content-bottom">
+                              <h6 class="title">Soil</h6>
+<!--                             <p class="text">(Comming Soon)</p>-->
+                          </div>
+							   </a>
+                      </div>
+
+
+                         <div class="card card-v2">
+                          <a href="/category/buy-grow-kits-online-in-delhi/">
+                          <div class="card-v2-image">
+                              <img src="{{static('web/img/gk_360.jpg')}}">
+                          </div>
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content content-bottom">
+                              <h6 class="title">Grow Kits</h6>
+<!--                            <p class="text">(Comming Soon)</p>-->
+                          </div>
+							  </a>
+                      </div>
+
+                         <div class="card card-v2">
+                          <a href="/category/buy-fertilizer-online-in-delhi/">
+                          <div class="card-v2-image">
+                              <img src="{{static('web/img/ferti_360.jpg')}}">
+                          </div>
+<!--
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+-->
+
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content content-bottom">
+                              <h6 class="title">Fertilizers</h6>
+<!--                             <p class="text">(Comming Soon)</p>-->
+                          </div>
+							  </a>
+                      </div>
+                	 <div class="card card-v2">
+                          <a href="/category/buy-pots-online-in-delhi/">
+                          <div class="card-v2-image">
+                              <img src="{{static('web/img/pots-home.jpg')}}">
+                          </div>
+<!--
+                          <div class="sale-new">
+                                  <h6 class="text">New</h6>
+                          </div>
+-->
+
+                          <div class="heart">
+                              <i class="fa fa-heart-o"></i>
+                          </div>
+                          <div class="content content-bottom">
+                              <h6 class="title">Pots</h6>
+<!--                             <p class="text">(Comming Soon)</p>-->
+                          </div>
+							   </a>
+                      </div>
+                </div>
+            </div>
+          </div>
+      </section>
+
+
+
+      <section class="fourth-scroll section-margin section-padding" id="why-sec">
+       <div class="container">
+        <div class="row">
+        <div class="col-md-12 section-tile text-center">
+            <h3 class="title-head"><span>Why</span> Green Decor</h3>
+        </div>
+        <div class="col-xs-12 why-sec">
+        <div class="hover-overlay width-100"></div>
+        <div class="col-md-12 col-xs-12 content-why">
+        <div class="col-xs-12 bg-layer">
+            <p class="title">Green Decor Specializes in providing indoor and outdoor plants for home decor and business spaces</p>
+            </div>
+          <div class="col-sm-3 why-box">
+              <img src="{{static('web/img/Library-50.png')}}" alt=""/>
+              <h6 class="text">All About Plant</h6>
+          </div>
+            <div class="col-sm-3 why-box">
+              <img src="{{static('web/img/Shop-50.png')}}" alt=""/>
+              <h6 class="text">One Stop Solution for all gardening needs</h6>
+          </div>
+
+            <div class="col-sm-3 why-box">
+              <img src="{{static('web/img/HandPlanting-50.png')}}" alt=""/>
+              <h6 class="text">Handpicked Plants &amp; Detailed quality check</h6>
+          </div>
+          <div class="col-sm-3 why-box">
+              <img src="{{static('web/img/Delivery-50.png')}}" alt=""/>
+              <h6 class="text">Fast delivery : Your day, Your time</h6>
+          </div>
+        </div>
+        </div>
+        </div>
+       </div>
+      </section>
+      <!--About green Decor section end-->
+          <!--How it works section-->
+        <section class="fifth-scroll client-review section-margin section-padding hidden-xs" id="how-it-work-sec">
+        <div class="row how-it-work">
+        <div class="col-md-12 section-tile text-center">
+            <h3 class="title-head"><span>How</span> It Works</h3>
+        </div>
+        <div class="col-sm-12 no-gutter">
+            <img src="{{static('web/img/green-how-it-works.jpg')}}" alt="Info graphics">
+        </div>
+        </div>
+      </section>
+      <!--How it works section end-->
+         <!--Customer review section-->
+    {% if testimonials.all()|length!=0 %}
+     <section class="six-scroll client-review" id="client-testomanial-sec">
+       <div class="container">
+        <div class="row review-testomanial">
+        <div class="col-md-12 section-tile text-center">
+            <h3 class="title-head"><span>What Our </span> Customers Say</h3>
+        </div>
+        <div class="col-xs-12">
+            <div class="item">
+                <ul id="testomanial-slider" class="reviews-slider">
+                  {% for testimonial in testimonials.all() %}
+                    <li>
+                      <div class="review-box text-center">
+                        <div class="slider-image">
+                             <img src="/media/{{testimonial.image}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="title">{{testimonial.text}}</p>
+                        </div>
+                          <div class="customer-name">
+                            <h4 class="name">{{testimonial.name}}</h4>
+                              <h4 class="subtitle"></h4>
+                          </div>
+                        </div>
+                  </li>
+                  {% endfor %}
+                  <!-- <li>
+                      <div class="review-box text-center">
+                        <div class="slider-image">
+                             <img src="{{ static('web/img/a268.jpg') }}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="title">We gifted Chandani Dwarf to our teacher at Pearl Academy and  everyone loved it. Thank you Green Decor for such a beautiful gift</p>
+                            </div>
+                          <div class="customer-name">
+                            <h4 class="name">Madhavi Maingi</h4>
+                              <h4 class="subtitle"></h4>
+                          </div>
+                        </div>
+
+                  </li>
+                  <li>
+                        <div class="review-box text-center">
+                        <div class="slider-image">
+                             <img src="{{ static('web/img/a269.jpg') }}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="title">Got this beautiful gift from my students.Highly over whelmed. Kudos team  Green Decor.</p>
+                            </div>
+                            <div class="customer-name">
+                            <h4 class="name">Alka Gupta</h4>
+                                <h4 class="subtitle">- Faculty,Pearl Academy</h4>
+                          </div>
+                        </div>
+                  </li>
+                  <li>
+                      <div class="review-box text-center">
+                        <div class="slider-image">
+                             <img src="{{ static('web/img/a270.jpg') }}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="title">The delivery is very fast and convenient. It reached me bang on time.</p>
+                            </div>
+                          <div class="customer-name">
+                            <h4 class="name">Parminder Deogan</h4>
+                              <h4 class="subtitle">- Customer, Saket</h4>
+                          </div>
+                        </div>
+                  </li>
+                  <li>
+                      <div class="review-box text-center">
+                        <div class="slider-image">
+                             <img src="{{ static('web/img/a271.jpg') }}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="title">I really am delighted, best plants I have bought online</p>
+                            </div>
+                          <div class="customer-name">
+                            <h4 class="name">Seyjal Gupta</h4>
+                              <h4 class="subtitle"></h4>
+                          </div>
+                        </div>
+                  </li> -->
+              </ul>
+            </div>
+        </div>
+        </div>
+       </div>
+      </section>
+    {% endif %}
+      <!--Customer Review section end-->
+      <!--blog section -->
+<!--
+      <section class="scroll-7 section-margin testomanial section-padding" id="testomanial">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-12 section-tile">
+            <h3 class="title-head"><span>From</span> Green Decor Blog</h3>
+          </div>
+          <div class="col-md-12 section-content">
+          <div class="col-xs-12 col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+              <div class="col-xs-12 col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+              <div class="col-xs-12 col-sm-4 card">
+              <div class="card-time">
+                <span class="day">oct</span>
+                <span class="date">22, </span>
+                <span class="year">2017</span>
+              </div>
+              <div class="card-image">
+                  <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+              </div>
+              <div class="card-content">
+                  <a href="#" class="title">Articulated Seating With Wavy Style</a>
+                  <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+                  <a href="#" class="read-more-btn">Read More</a>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+-->
+      <!--blog end-->
+      <!--div main content end-->
+    </div>
+    {% endblock %}
+
+
+    {% block footer %}
+      <footer class="secondry-bg">
+    <div class="footer-top">
+        <div class="container">
+        <div class="row">
+        <div class="col-xs-12">
+        <div class="col-sm-8">
+         <div class="feature-footer"><img src="{{static('web/img/truck-footer.png')}}"/> <p class="lead">Free Shipping</p>
+             <p class="text">Above &#8377; {{delivery_charge_config[0].max_amount}} Shopping</p></div>
+          <div class="feature-footer"><img src="{{static('web/img/call-footer.png')}}"/><a class="lead" href="tel:+919953572573">+91 - 9953 572 573</a>
+                <p class="text">(Mon - Sat 9am - 9pm)</p>
+            </div>
+           <div class="feature-footer"><img src="{{static('web/img/gift-footer.png')}}"/> <p class="lead">Gift a Life</p>
+                <p class="text">Gift Plants </p>
+            </div>
+        </div>
+           <div class="col-sm-4 News-letter">
+                <form id="GetInTouchForm">
+                    <div class="footer-box no-gutter col-xs-7">
+                    <h4 class="title-footer">Get In Touch With Us</h4>
+                    <input type="email" name="email" id="email" placeholder="Email" class="input" required="">
+                    </div>
+                    <div class="footer-box col-xs-5 hollow-button">
+                    <input type="submit" name="" class="button" placeholder="Subcribe">
+                    </div>
+                </form>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+
+        <div class="top-footer">
+          <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-xs-12 footer-main">
+                  <div class="col-sm-3 logo-footer">
+                       <img src="{{ static('web/img/logo.png') }}" alt="">
+                      <p class="text">
+                        GreenDecor- Your online plantsman, assisting you in connecting with plants & greenery.
+                      </p>
+                  </div>
+                  <div class="col-sm-3 col-xs-12 footer-venue">
+                      <h4 class="title-footer">Reach Us</h4>
+                      <div class="footer-box col-xs-12">
+                      <div class="col-xs-2">
+                          <i class="fa fa-map-marker"></i>
+                      </div>
+                      <div class="col-xs-10">
+                          <p class="title">Address</p>
+                          <p class="text">D Mall, Pitampura,<br> New Delhi</p>
+                      </div>
+                      </div>
+                      <div class="footer-box col-xs-12">
+                      <div class="col-xs-2">
+                          <i class="fa fa-phone"></i>
+                      </div>
+                      <div class="col-xs-10">
+                          <p class="title">Call Us</p>
+                          <p class="text"><a class="afooter"  href="tel:+919953572573">+91 9953 572 573</a></p>
+                      </div>
+                      </div>
+                      <div class="footer-box col-xs-12">
+                      <div class="col-xs-2">
+                          <i class="fa fa-envelope-o"></i>
+                      </div>
+                      <div class="col-xs-10">
+                          <p class="title">Email Us</p>
+                          <a href="mailto:info@greendecor.in"><p class="text">info@greendecor.in</p></a>
+                      </div>
+                      </div>
+                  </div>
+                   <div class="col-sm-3 col-xs-12 News-letter">
+                      <h4 class="title-footer">Quick Links</h4>
+                      <div class="footer-box col-xs-12">
+<!--                          <a class="footer-link" href="{{url('category_details',args=[1])}}">Categories</a>-->
+                          <a href="{{url('about-us')}}" class="footer-link">About Us</a>
+<!--                          <a href="{{url('faq')}}" class="footer-link">FAQ</a>-->
+                          <a target="_blank" href="http://www.blog.greendecor.in" class="footer-link">Blog</a>
+                          <a href="{{url('contact-us')}}" class="footer-link">Contact Us</a>
+                          <a href="{{url('index')}}" class="footer-link">Home</a>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-12 instgram-footer">
+                      <h4 class="title-footer">Follow Us</h4>
+                      <div class="footer-box no-gutter col-xs-12">
+                            <div class="col-xs-3">
+                                <a target="_blank" href="https://www.facebook.com/greendecor.in/"><i class="fa fa-facebook"></i></a>
+                            </div>
+<!--
+                            <div class="col-xs-3">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </div>
+-->
+                            <div class="col-xs-3">
+                                <a target="_blank" href="http://instagram.com/greendecor09"><i class="fa fa-instagram"></i></a>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <div class="col-xs-12">
+            <div class="col-sm-6 text-left">
+                <img src="{{ static('web/img/master-card.svg') }}" alt=""/>
+                 <img src="{{ static('web/img/maestro.svg') }}" alt=""/>
+                 <img src="{{ static('web/img/visa.svg') }}" alt=""/>
+                 <img src="{{ static('web/img/payumoney.png') }}" alt=""/>
+                 <img src="{{ static('web/img/american-express.svg') }}" alt=""/>
+            </div>
+            <div class="col-sm-6 responsive-right-to-left text-right">
+
+                <p><a href="{{url('privacy-policy')}}">Privacy Policy |</a> <a href="{{url('term-condition')}}">T &amp; C |</a> GreenDecor &copy; CopyRight 2017</p>
+            </div>
+            </div>
+          </div>
+            </div>
+           <div class="top-scrolling-btn-in-bottom">
+        	<a href="#main"><i class="fa fa-angle-up"></i></a>
+        </div>
+        </footer>
+    {% endblock %}
+ </div>
+
+
+
+
+    <script src="{{ static('web/js/vendor/bootstrap.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="{{ static('web/js/mainv1.js') }}"></script>
+    <!-- <script src="{{ static('web/js/instafeed.js') }}"></script> -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script type="text/javascript">
+         $(function(){
+             var list =[
+              {% for cat in categories.all() %}
+
+                    {% if cat.parent_category == None and cat.category_type=='Plants' %}
+ 					  {
+				     "img":"/media/{{cat.thumbnail}}",
+							"id":"{{cat.slug}}",
+							"name":"{{cat.name}}"
+ 					  },
+                      {% endif %}
+                    {% endfor %}
+
+                    ];
+                       for(var i=0;i<list.length;i++){
+                           //console.log(list[i]);
+                           if(i<6){
+                               $('#cat-1').append('<li ><a href="/category/'+list[i].id+'">'+list[i].name+'</a></li>')
+                           }else if(i<12){
+                           $('#cat-2').append('<li ><a href="/category/'+list[i].id+'">'+list[i].name+'</a></li>')
+                           }else if(i<18){
+                           $('#cat-3').append('<li ><a href="/category/'+list[i].id+'">'+list[i].name+'</a></li>')
+                           }else if(i<24){
+							    $('#cat-4').append('<li><a href="/category/'+list[i].id+'">'+list[i].name+'</a></li>')
+                           }
+                       }
+			  function searchFormSubmit(){
+				  $(this).parents('form').submit();
+			  }
+//                	$('header nav ul.menu-1 li > ul.dropdown-menu.full-width li').hover(function(){
+//						var val=$(this).attr('data-image');
+//						$('#cat-5').find('img').attr('src',val);
+//					});
+                });
+    </script>
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        //   $(function(){
+        //   var feed = new Instafeed({
+        //       get:'greendecor',
+        //       userId:'1677ed0',
+        //        accessToken: 'fdb628c407454106b9caf927e8678846'
+        //     });
+        //     feed.run();
+        // })
+    </script>
+    <!--Start of Zendesk Chat Script-->
+    <script type="text/javascript">
+      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+      d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+      _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+      $.src="https://v2.zopim.com/?4i6TZ6QDBbGcpl7bNZNheX5NrePkxm5A";z.t=+new Date;$.
+      type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script>
+    <!--End of Zendesk Chat Script-->
+
+
+    <!-- <script>
+    fbq('track', 'AddToCart');
+    </script> -->
+
+
+    {% if messages %}
+
+
+        {% for message in messages(request) %}
+
+           {% if message.tags=='success' %}
+            <script>
+              $(document).toastr_success('{{message}}')
+            </script>
+           {% endif %}
+
+           {% if message.tags=='info' %}
+            <script>
+              $(document).toastr_alert('{{message}}')
+            </script>
+           {% endif %}
+
+           {% if message.tags=='warning' %}
+            <script>
+              $(document).toastr_warning('{{message}}')
+            </script>
+           {% endif %}
+
+           {% if message.tags=='error' %}
+            <script>
+              $(document).toastr_alert('{{message}}')
+            </script>
+           {% endif %}
+
+        {% endfor %}
+    {% endif %}
+
+  
+  {% block custome_script %}
+
+  <script type="text/javascript">
+   $(document).ready(function() {
+   $("#content-slider").lightSlider({
+         gallery:false,
+         item:1,
+         thumbItem:3,
+         slideMargin: 0,
+         speed:1200,
+         mode: "fade",
+         pause: 5000,
+         auto:true,
+	     pauseOnHover:false,
+         loop:true,
+         onSliderLoad: function() {
+             $('#content-slider').removeClass('cS-hidden');
+         }
+     });
+
+    $("#divide-slider").lightSlider({
+         gallery:true,
+         item:4,
+         thumbItem:0,
+         slideMargin: 0,
+         speed:1200,
+         auto:true,
+         loop:true,
+		controls: true,
+        responsive: [{
+						breakpoint : 817,
+						settings: {
+							item: 3,
+							slideMove: 1,
+							sliderWidth: 300
+								}
+						}, {
+						breakpoint:666,
+						settings: {
+							item: 2,
+							slideMove: 1,
+							sliderWidth: 375
+							}
+						}, {
+						breakpoint: 480,
+						settings: {
+							item: 1,
+							slideMove: 1,
+							sliderWidth: 375
+							}
+						}],
+         onSliderLoad: function() {
+             $('#divide-slider').removeClass('cS-hidden');
+         }
+     });
+
+
+
+     $("#divide-slider-category").lightSlider({
+          gallery:true,
+          item:4,
+          thumbItem:0,
+          slideMargin: 0,
+          speed:1200,
+          auto:false,
+          loop:true,
+		 controls: true,
+         responsive: [{
+             breakpoint : 817,
+             settings: {
+               item: 3,
+               slideMove: 1,
+               sliderWidth: 300
+                 }
+             }, {
+             breakpoint:666,
+             settings: {
+               item: 2,
+               slideMove: 1,
+               sliderWidth: 375
+               }
+             }, {
+             breakpoint: 480,
+             settings: {
+               item: 1,
+               slideMove: 1,
+               sliderWidth: 375
+               }
+             }],
+          onSliderLoad: function() {
+              $('#divide-slider').removeClass('cS-hidden');
+          }
+      });
+
+
+
+
+
+       $("#testomanial-slider").lightSlider({
+         gallery:true,
+         item:2,
+         thumbItem:0,
+         slideMargin: 0,
+         speed:1200,
+         auto:true,
+         loop:true,
+         slideEndAnimation: true,
+         pause: 5000,
+            responsive: [{
+						breakpoint:666,
+						settings: {
+							item: 1,
+							slideMove: 1
+							}
+						}],
+         onSliderLoad: function() {
+             $('#testomanial-slider').removeClass('cS-hidden');
+         }
+     });
+   });
+
+  </script>
+  {% endblock %}
+
+  {% block add_cart_script %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.select-plant').select2();
+    });
+      function add_to_cart(plant,quantity){
+        // alert('inside function');   //wigzoapi
+        $.ajax({
+          url: "/addcart/"+plant+"/"+quantity,
+          type: 'GET',
+          headers: {'content-type': 'application/json'},
+          success: function (data) {
+            // alert(data);
+            $('#cart_value').html(data);
+            // $('#myModal').modal('toggle');
+            $('#addToCartModal').modal('show');
+            // $(document).toastr_success('Product added to cart successfully')
+          }
+        });
+//        wigzo ("track", "addtocart", plant);   //wigzoapi
+      }
+
+      function removeCartItem(cartItem_id,price){
+        $.ajax({
+          url: "/removeCart/"+cartItem_id,
+          type: 'GET',
+          headers: {'content-type': 'application/json'},
+          success: function (data) {
+            l = parseInt($('#cart_length').text());
+            if(l==1){
+              $('#price_details').remove();
+              $('#cart_value').html(0);
+            } else {
+              $('#total_amount').text(parseInt($('#total_amount').text())-price);
+              $('#total_item_amount').text(parseInt($('#total_item_amount').text())-price);
+            }
+            $('#cart_length').text(l-1);
+            $('#cart_value').html(l-1);
+            $('#cart_item_'+cartItem_id).remove();
+            $(document).toastr_success('cart item removed');
+          }
+        });
+        }
+
+        function buy_now(plant,quantity){
+          $.ajax({
+            url: "/addcart/"+plant+"/"+quantity,
+            type: 'GET',
+            headers: {'content-type': 'application/json'},
+            success: function (data) {
+              window.location.href = "{{url('cart')}}"
+            }
+          });
+        }
+
+
+
+
+        $('#GetInTouchForm').submit(function(event) {
+          $(this).find(':input[type=submit]').prop('disabled', true);
+            $.ajax({
+              type: "POST",
+              url: "{{ url('get-in-touch') }}",
+              headers: { "X-CSRFToken": '{{csrf_token}}' },
+              data:$('#GetInTouchForm').serialize(),
+              success: function( returnedData) {
+                $(document).toastr_success('Thank you for getting in touch. We will contacting you soon.');
+                $(this).find(':input[type=submit]').prop('disabled', false);
+              }
+            });
+            $('#GetInTouchForm').reset();
+            event.preventDefault();
+        });
+
+
+  </script>
+
+
+  <!-- Hotjar Tracking Code for https://www.greendecor.in/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:524267,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+  {% endblock %}
+
+
+  <script type="text/javascript">
+
+_linkedin_data_partner_id = "117976";
+
+</script><script type="text/javascript">
+
+(function(){var s = document.getElementsByTagName("script")[0];
+
+var b = document.createElement("script");
+
+b.type = "text/javascript";b.async = true;
+
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+
+s.parentNode.insertBefore(b, s);})();
+
+</script>
+
+<noscript>
+
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=117976&fmt=gif" />
+
+</noscript>
+
+
+
+
+<script>
+$(".hollow-button").click(function(){
+    $(".trigger").addClass("drawn")
+});
+</script>
+<!-- add to cart modal  -->
+
+<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+
+                <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+        <!-- ===== tick ====== -->
+        <div class="trigger"></div>
+            <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+            <path class="circ path" style="fill:none;stroke:#1b8131;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+            	M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+            	/>
+            <polyline class="tick path" style="fill:none;stroke:#1b8131;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+            	11.6,20 15.9,24.2 26.4,13.8 "/>
+            </svg>
+        <!-- ===== tick ====== -->
+
+        <h5 class="modal-title text-center add-card-success">Product added to cart successfully</h5>
+
+        <div class="row">
+          <div class="col-md-6 col-xs-12 hollow-button">
+            <a href="{{url('search')}} " class="button add-card-btn">Continue Shopping <i class="fa fa-cart-plus"></i></a>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <a href="{{url('cart')}}" class="button add-card-btn">View Cart <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+ </body>
+</html>

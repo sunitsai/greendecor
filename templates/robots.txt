@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+SITEMAP: https://www.greendecor.in/sitemap.xml

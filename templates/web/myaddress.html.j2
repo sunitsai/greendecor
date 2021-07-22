@@ -1,0 +1,67 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: myaddress.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+{% block main_content %}
+ <div class="main-content inner profile">
+      <!-- div class main content start-->
+<section class="scroll-first section-padding" id="my-profile">
+    <div class="container">
+        <div class="col-sm-12 dashbord">
+            <div class="col-sm-3 secondry-bg dashbord-menu">
+                    {% include 'web/dashboard-side.html.j2' %}
+                </div>
+                <div class="col-sm-7 col-xs-12 dashbord-content">
+                <div class="col-xs-12 text-left">
+                    <h3 class="title-head"><span>My </span> Address</h3>
+                </div>
+                <div class="col-sm-12 my-profile forgot-pwd">
+                    <form method="post" action="">
+                      <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                        <div class="col-xs-12">
+                          {{form.address_line1}}
+                            <!-- <input class="input" name="address_line1" type="text" placeholder="Address Line 1" value=""> -->
+                        </div>
+                        <div class="col-xs-12">
+                          {{form.address_line2}}
+                            <!-- <input class="input" name="address_line2" type="text" placeholder="Address Line 2" value=""> -->
+                        </div>
+                        <div class="col-xs-12">
+                          {{form.state}}
+                            <!-- <input class="input" name="state" type="text" placeholder="State" value=""> -->
+                        </div>
+                        <div class="col-xs-12">
+                          {{form.city}}
+                            <!-- <input class="input" name="nearest_landmark" type="text" placeholder="Nearest Landmark" value=""> -->
+                        </div>
+
+                        <div class="col-xs-12">
+                          {{form.pincode}}
+                            <!-- <input class="input" name="pincode" type="number" placeholder="Pincode" value=""> -->
+                        </div>
+
+                        {% if form.errors %}
+                          <div class="col-xs-12">
+                              {%for error in form.errors.__all__%}
+                              <p style="color:red;">{{error}}</p>
+                              {%endfor%}
+                          </div>
+                        {%endif%}
+
+                        <div class="col-xs-12">
+                          <!-- form-submit -->
+                            <input class="submit" type="submit" value="Update">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+</div>
+{% endblock %}

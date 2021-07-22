@@ -1,0 +1,382 @@
+{% extends 'base.html.j2' %}
+{% block main_content %}
+<div class="main-content inner about-content">
+  <!-- div class main content start-->
+  <!--banner start-->
+  <section id="banner">
+      <div class="container-fluid no-gutter">
+        <div class="col-xs-12 banner no-gutter overlay-box">
+            <img src="{{ static('web/img/slide-2.jpg') }}" alt="Banner"/>
+            <div class="hover-overlay">
+                <h4 class="title">Go Green with GreenDecor</h4>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- /container -->
+  <section class="scroll-first about-us section-margin section-padding" id="about-us">
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-12 content">
+                <div class="col-xs-12 section-title">
+                    <h3 class="title-head"><span>The New</span> Way of Green Decor</h3>
+                </div>
+                <div class="col-sm-9">
+                    <p class="lead">Green Decor specializes in providing indoor and outdoor plants for home decor and business spaces. At Green Decor you get the best species of plants and styles to choose from.
+ Our aim is to bring one stop online shop with ‘Best in Class’ services for our customers at affordable prices.
+
+</p>
+                </div>
+                <div class="col-sm-3 share">
+                    <h6 class="title">Follow Us</h6>
+                    <div class="social-share">
+                       <a target="_blank" href="https://www.facebook.com/greendecor.in" ><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="http://instagram.com/greendecor09" ><i class="fa fa-instagram"></i></a>
+<!--
+                            <a href="#!" ><i class="fa fa-pinterest-p"></i></a>
+                            <a href="#!" ><i class="fa fa-google-plus"></i></a>
+-->
+                    </div>
+                    <a href="{{url('contact-us')}}" class="button">Write to Us</a>
+                </div>
+            </div>
+        </div>
+      </div>
+  </section>
+
+    <!--who we are-->
+     <section class="scroll-fourth  section-padding" id="why-decor">
+        <div class="container">
+        <div class="row why-decor">
+          <div class="col-xs-12">
+            <div class="col-xs-12 sectio-title">
+                <h3 class="title-head"><span>Why</span> Green Decor ?</h3>
+            </div>
+            <div class="col-xs-12 no-gutter">
+          <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/certi.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Authentic Products</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Authentic information about the plants and other products</p>
+              </div>
+            </div>
+              <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/badge1.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Quality Assurance</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Total control over quality delivered to our clients</p>
+              </div>
+            </div>
+                <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/allneeds.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">One Stop Solution</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">One stop solution for all your gardening needs (plants, planters, services and other related information)</p>
+              </div>
+            </div>
+                <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/delivery_480.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Easy Returns</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Easy return policy for absolute customer satisfaction</p>
+              </div>
+            </div>
+            </div>
+              <div class="col-xs-12 no-gutter bottom-seprator">
+          <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/delivery_480.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Fast Delivery</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Fastest delivery at doorstep at Your Day Your Time</p>
+              </div>
+            </div>
+              <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/rupeedownsquare_480.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Pocket Friendly</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Feasible business model ensuring pocket friendly pricing</p>
+              </div>
+            </div>
+                  <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/giftalife.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Handpicked Plants</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">Handpicked variety of Pots and Plants selected by experts to suit your requirements</p>
+              </div>
+            </div>
+                <div class="col-sm-3 col-xs-12 box">
+            <div class="image">
+                 <img src="{{ static('web/img/vastu.png') }}" alt="Banner"/>
+            </div>
+              <div class="title-head">
+                <h5 class="title">Wide Variety</h5>
+              </div>
+              <div class="content-box">
+                <p class="text">User friendly technology to help customers choose from a vast variety</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+     <!-- gift a life Strip -->
+    <section class="scroll-third section-padding" id="gift-a-life">
+        <div class="container-fluid no-gutter">
+          <div class="col-xs-12 gift-a-life no-gutter">
+            <div class="col-sm-4 no-gutter">
+                <img src="{{ static('web/img/slide-2.jpg') }}" alt="Banner"/>
+              </div>
+              <div class="col-sm-8 secondry-bg-green content">
+                <div class="inner-content col-xs-12">
+                 <div class="box col-xs-12">
+                     <h4 class="title"><i class="fa fa-gift"></i> Gift A Life <i class="fa fa-pagelines"></i></h4>
+                     <p class="title">GreenDecor is your online plantsman. Through the green decor mobile app you can gift plants  to your colleagues, friends and family. Also plant a tree on your behalf to contribute your bit towards preservation of nature.</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
+
+
+ <!-- quality process-->
+    <section class="scroll-first section-padding" id="quality-process">
+        <div class="container">
+            <div class="row quality-process">
+            <div class="col-xs-12 setion-title">
+                <h3 class="title-head"><span>Our Quality </span> Process</h3>
+            </div>
+            <div class="col-xs-12">
+                <div class="step step-1">
+                    <h4 class="title">Step 1</h4>
+                    <p class="text">Handpicked products posted on website </p>
+                </div>
+                <div class="step step-2">
+                    <h4 class="title">Step 2</h4>
+                    <p class="text">Continuous Up gradation of the variety based on the season and climatic conditions</p>
+                </div>
+                <div class="step step-3">
+                    <h4 class="title">Step 3</h4>
+                    <p class="text">Complete check-up before delivery</p>
+                </div>
+                <div class="step step-4">
+                    <h4 class="title">Step 4</h4>
+                    <p class="text">Real image sent to the customer for  confirmation</p>
+                </div>
+                <div class="step step-5">
+                    <h4 class="title">Step 5</h4>
+                    <p class="text">The product gets delivered</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!--    Team Section -->
+
+
+  <section class="fifth-scroll section-margin testomanial section-padding" >
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12 section-tile">
+        <h3 class="title-head"><span>Meet the Team behind </span> Green Decor</h3>
+      </div>
+
+      <div class="col-md-12 section-content team">
+
+        <div class="col-sm-12 col-xs-12 card">
+  <!--
+            <div class="card-time">
+              <span class="day">oct</span>
+              <span class="date">22, </span>
+              <span class="year">2017</span>
+            </div>
+  -->
+            <div class="team-image col-sm-4">
+                <img src="{{ static('web/img/team-gaurav.jpg') }}" alt="" style="object-fit: contain;">
+            </div>
+            <div class="card-content col-sm-8">
+                <a  class="title">Gaurav Vashisht</a>
+                &nbsp;
+                <a target="_blank" href="https://www.linkedin.com/in/gauravvashishttrainer/" class="linkedin-icon-gd"><i class="fa fa-linkedin"></i></a>
+
+                <p class="text">Founder</p>
+                <!-- <p class="text">
+                  Dr. S C Kapoor - Advisor on Board, with an experience of more than 40 yrs. under his belt, Mr. Kapoor is a specialist of Strategic Planning and Human Resource Development. He has held top positions with brands like Tatas, HMT and many others. A veteran in his domain he is associated with many flagship brands in India as a prime management consultant. An author to many research papers and abundance of deliberation in mentoring budding talents.</p> -->
+
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12 card" style="margin-top:10px;">
+          <!--
+                    <div class="card-time">
+                      <span class="day">oct</span>
+                      <span class="date">22, </span>
+                      <span class="year">2017</span>
+                    </div>
+          -->
+                    <div class="team-image col-sm-4">
+                        <img src="{{ static('web/img/team-sckapoor.jpg') }}" alt="" style="object-fit: contain;">
+                    </div>
+                    <div class="card-content col-sm-8">
+                        <a  class="title">Dr. S.C. Kapoor</a>
+                        &nbsp;
+                        <!-- <a target="_blank" href="https://www.linkedin.com/in/gauravvashishttrainer/" class="linkedin-icon-gd"><i class="fa fa-linkedin"></i></a> -->
+        
+                        <p class="text">Advisor on Board</p>
+                        <p class="text">
+                          Dr. S C Kapoor - Advisor on Board, with an experience of more than 40 yrs. under his belt, Mr. Kapoor is a specialist of Strategic Planning and Human Resource Development. He has held top positions with brands like Tatas, HMT and many others. A veteran in his domain he is associated with many flagship brands in India as a prime management consultant. An author to many research papers and abundance of deliberation in mentoring budding talents.</p>
+        
+                    </div>
+                </div>
+        <div class="col-sm-12 col-xs-12 card" style="margin-top:10px;">
+          <!--
+                    <div class="card-time">
+                      <span class="day">oct</span>
+                      <span class="date">22, </span>
+                      <span class="year">2017</span>
+                    </div>
+          -->
+                    <div class="team-image col-sm-4">
+                        <img src="{{ static('web/img/team-deepakkatyal.jpg') }}" alt="" style="object-fit: contain;">
+                    </div>
+                    <div class="card-content col-sm-8">
+                        <a  class="title">Mr. Deepak Katyal</a>
+                        &nbsp;
+                        <!-- <a target="_blank" href="https://www.linkedin.com/in/gauravvashishttrainer/" class="linkedin-icon-gd"><i class="fa fa-linkedin"></i></a> -->
+        
+                        <p class="text">Advisor on Board</p>
+                        <p class="text">
+                          Mr. Deepak Katyal - Advisor on Board - A banker and passionate botanist, Mr. Katyal is a philanthropist by nature and a guiding force behind team Green Decor. He has worked with Bank of Tokyo Mitsubishi, in various key positions and has held many accolades under his name.
+                        </p>
+        
+                    </div>
+                </div>
+
+                        <div class="col-sm-12 col-xs-12 card" style="margin-top:10px;">
+                          <!--
+                                    <div class="card-time">
+                                      <span class="day">oct</span>
+                                      <span class="date">22, </span>
+                                      <span class="year">2017</span>
+                                    </div>
+                          -->
+                                    <div class="team-image col-sm-4">
+                                        <img src="{{ static('web/img/team-vikasgupta.jpg') }}" alt="" style="object-fit: contain;">
+                                    </div>
+                                    <div class="card-content col-sm-8">
+                                        <a  class="title">Mr. Vikas Gupta</a>
+                                        &nbsp;
+                                        <!-- <a target="_blank" href="https://www.linkedin.com/in/gauravvashishttrainer/" class="linkedin-icon-gd"><i class="fa fa-linkedin"></i></a> -->
+                        
+                                        <p class="text">Principal Advisor</p>
+                                        <p class="text">
+                                          Mr. Vikas Gupta - Principal Advisor – Mr. Gupta is a strong motivation behind the concept of Green Décor, with ample experience at his disposal, he posses strong business acumen and strategic planning skills to contribute to the project. In a very short span of time, Mr. Gupta has earned heaps of accolades for himself with humility and  gratitude. His goodwill and hard work has brought him undisputed benign presence in the stock broking market, Corporate Investments, Portfolio Management and likewise services.</p>
+                        
+                                    </div>
+                                </div>
+
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+    <!--Testomanial section -->
+<!--
+  <section class="fifth-scroll section-margin testomanial section-padding" id="testomanial">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12 section-tile">
+        <h3 class="title-head"><span>From </span> Green Decor Blog</h3>
+      </div>
+      <div class="col-md-12 section-content">
+      <div class="col-sm-4 col-xs-12 card">
+          <div class="card-time">
+            <span class="day">oct</span>
+            <span class="date">22, </span>
+            <span class="year">2017</span>
+          </div>
+          <div class="card-image">
+              <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+          </div>
+          <div class="card-content">
+              <a href="#" class="title">Articulated Seating With Wavy Style</a>
+              <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+              <a href="#" class="read-more-btn">Read More</a>
+          </div>
+      </div>
+      <div class="col-sm-4 col-xs-12 card">
+          <div class="card-time">
+            <span class="day">oct</span>
+            <span class="date">22, </span>
+            <span class="year">2017</span>
+          </div>
+          <div class="card-image">
+              <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+          </div>
+          <div class="card-content">
+              <a href="#" class="title">Articulated Seating With Wavy Style</a>
+              <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+              <a href="#" class="read-more-btn">Read More</a>
+          </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 card">
+          <div class="card-time">
+            <span class="day">oct</span>
+            <span class="date">22, </span>
+            <span class="year">2017</span>
+          </div>
+          <div class="card-image">
+              <img src="{{ static('web/img/slide-1.jpg') }}" alt="">
+          </div>
+          <div class="card-content">
+              <a href="#" class="title">Articulated Seating With Wavy Style</a>
+              <p class="text">Get bored easily? Try a setup with a wide variety of furniture. Instead of two...</p>
+              <a href="#" class="read-more-btn">Read More</a>
+          </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+-->
+    <!--Testomanial end-->
+    <!--div main content end-->
+</div>
+{% endblock %}
+
+{% block custome_script %}
+
+{% endblock %}

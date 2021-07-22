@@ -1,0 +1,89 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: my-plants.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+ <div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="dashbord-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 dashbord">
+
+                <div class="col-sm-3 secondry-bg dashbord-menu">
+
+                  {% include 'web/dashboard-side.html.j2' %}
+
+                </div>
+
+
+
+                <div class="col-sm-9 dashbord-content cart-sec">
+                <div class="col-xs-12 section-tilte no-gutter">
+                <h3 class="title-head"><span>HI</span> {{request.user.username}}</h3>
+                </div>
+                <div class="col-xs-12 no-gutter">
+                <h5 class="title"><span>My </span>Plants</h5>
+                </div>
+
+                {% if items|length > 0 %}
+                  <div class="col-xs-12 no-gutter cart-head cart-box">
+                    <div class="col-sm-6">
+                        <h4 class="title">Plants</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="title">Quantity</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="title">Edit</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="title">Delete</h3>
+                    </div>
+                </div>
+                {% endif %}
+                {% if items|length <=0 %}
+                  <div class="col-xs-12 no-gutter cart-head cart-box">
+                      <p>You have no Plants.</p>
+                  </div>
+                {% endif %}
+                {% for item in items %}
+
+                  <div class="col-xs-12 no-gutter cart-box">
+                    <div class="col-sm-2">
+                            <img src="/media/{{item.plant.images.all()[0].image}}" alt=""/>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="text">{{item.plant.name}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="text">{{item.quantity}}</p>
+                    </div>
+                    <div class="col-sm-2 add-to-cart quantity">
+                        <a href="#">Edit</a>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% endblock %}

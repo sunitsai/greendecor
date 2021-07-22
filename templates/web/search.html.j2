@@ -1,0 +1,128 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+
+<script>
+
+  fbq('track', 'Search');
+
+</script>
+
+ <div class="main-content inner search-full">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first section-padding" id="search-full">
+ <div class="container">
+     <div class="row">
+        <div class="col-md-12 fullpage-search">
+            <div class="col-sm-3 filter-sec">
+              <div class="category-filter col-sm-12">
+				 <div class="col-sm-12 no-gutter filter-title">
+					<div class="col-sm-7">
+					 	 <h4 class="filters">Filters</h4>
+					 </div>
+					 <div class="col-sm-5" id="clear-all">
+						</div>
+				</div>
+				 <div class="col-sm-12 no-gutter panel">
+                    <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Category <i class="fa fa-angle-up"></i></h4>
+                    </div>
+                    <div class="col-sm-12 no-gutter panel-content in" id="category">
+
+                    </div>
+                </div>
+				<div class="col-sm-12 no-gutter panel">
+                    <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Price</h4>
+                    </div>
+                    <div class="col-sm-12 no-gutter panel-content in" id="prices">
+                    </div>
+                </div>
+				<div class="col-sm-12 no-gutter panel">
+                      <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Season <i class="fa fa-angle-down"></i></h4>
+                    </div>
+					 <div class="col-sm-12 no-gutter panel-content" id="season">
+
+                    </div>
+                </div>
+				<div class="col-sm-12 no-gutter panel">
+                      <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Fragrance <i class="fa fa-angle-down"></i></h4>
+                    </div>
+					 <div class="col-sm-12 no-gutter panel-content" id="fragrance">
+
+                    </div>
+                </div>
+				<div class="col-sm-12 no-gutter panel">
+                      <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Placement <i class="fa fa-angle-down"></i></h4>
+                    </div>
+					 <div class="col-sm-12 no-gutter panel-content" id="placemen">
+
+                    </div>
+                </div>
+                  <div class="col-sm-12 no-gutter panel">
+                    <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Placements Tags <i class="fa fa-angle-down"></i></h4>
+                    </div>
+                    <div class="col-sm-12 no-gutter panel-content" id="tags">
+
+                    </div>
+                </div>
+				 <div class="col-sm-12 no-gutter panel">
+                    <div class="col-sm-12 no-gutter panel-title">
+                        <h4 class="title">Maintenance Level <i class="fa fa-angle-down"></i></h4>
+                    </div>
+                    <div class="col-sm-12 no-gutter panel-content" id="maintenance_level">
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-9 full-search-card">
+				<div class="col-xs-12 search-box">
+				<input type="text" placeholder="Search Among The Plants" id="search-box" class="input"/>
+				</div>
+                <div class="col-xs-12 category-filter">
+                   <div class="col-sm-5 name" id="stats-container">
+                        <!-- <h4 class="tiltle">{{plants|length}} Result Find For <span> {{query}}</span></h4> -->
+                    </div>
+
+					<div class="col-sm-2" >
+
+					</div>
+                    <div class="col-sm-5 sorting text-right">
+                    <ul>
+                        <li>Sort by Price:</li>
+                        <li id="sort-by-selector"></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 full-card" id="result">
+                </div>
+				<div id="pagination-container" class="col-xs-12 text-center">
+				</div>
+            </div>
+         </div>
+     </div>
+</div>
+</section>
+</div>
+{% endblock %}
+{% block custome_script %}
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script type="text/javascript" src="{{ static('web/js/customsearch.js')}}">
+</script>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!--
+ @Author: Javed Ahamad
+ @Date:   2017-02-12
+ @Email:  javedahamad4@gmail.com
+ @Filename: login.html.j2
+-->
+
+{% extends 'base.html.j2' %}
+
+
+{% block main_content %}
+
+<style>
+
+    @media (max-width:768px){
+        .not-found img{
+            width: 200px !important;
+            height: 200px !important;
+        }
+        
+        .inner .not-found .content{
+            padding-top: 0px;
+        }
+    }
+</style>
+ <div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+<section class="scroll-first 404-page section-padding" id="login-signup">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 not-found">
+            <div class="image col-xs-12 col-md-6 text-center">
+            <img src="{{static('web/img/404_720.png')}}" style="height: 400px;width: 400px;object-fit:contain">
+            </div>
+            <div class="content col-xs-12 col-md-6 text-center">
+                 <h2 class="title-head">Error 404.</h2>
+                    <p class="lead">Sorry, we could not find the page you were looking for. <br> If you have any urgent query you can contact us via <br><a href="tel:+919953572573">Call  +91 9953 572 573</a> </p>
+                <div class="col-xs-6 text-right">
+                <a class="button" href="/">Back to Home</a>
+                </div>
+                <div class="col-xs-6 text-left">
+                    <a class="button" href="/dashboard/">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+{% endblock %}

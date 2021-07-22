@@ -1,0 +1,156 @@
+{% extends 'base.html.j2' %}
+
+{% block custom_script_seo %}
+  <!-- Event snippet for Example conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-123456789/AbC-D_efG-h12_34-567',
+      'value': {{booking.amount}},
+      'currency': 'INR'
+    });
+  </script>
+{% endblock %}
+
+{% block main_content %}
+<!-- main content here -->
+
+<script>
+
+  fbq('track', 'AddPaymentInfo');
+
+</script>
+
+<div class="main-content inner signup-form">
+      <!-- div class main content start-->
+      <!-- /container -->
+    <!--Delivery & payment section content start-->
+<section class="scroll-first section-padding" id="cart-deleviry-sec">
+  <div class="container">
+    <div class="row cart-sec cart-shipping-sec">
+        <div class="col-md-12 shipping-addr">
+             <div class="col-sm-3 section-tilte">
+                <h3 class="title-head"><span>My</span>Cart</h3>
+            </div>
+            <div class="col-sm-9">
+                <div class="cart-tab">
+                    <p class="title">Cart</p>
+                </div>
+                <div class="cart-tab middle-tab">
+                    <p class="title">Shipping </p>
+                </div>
+                <div class="cart-tab cur-tab">
+                    <p class="title">Payment</p>
+                </div>
+            </div>
+            <div class="col-xs-12">
+            </div>
+            <form method="post" id="PaymentForm">
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              <div class="col-sm-8 add-cart">
+                  <div class="col-xs-12 no-gutter cart-box">
+                      <h6 class="title">Choose Payment Method:</h6>
+                      <div class="col-sm-6 col-md-6">
+                          <input type="radio" value="online_payu" id="label-1" name="payment_type"><label for="label-1">Pay ONLINE using PayU</label>
+                      </div>
+                      <!-- <div class="col-sm-6 col-md-4">
+                          <input type="radio" id="label-2" name="radio"><label for="label-2">PayTm</label>
+                      </div> -->
+                      <div class="col-sm-6 col-md-6">
+                          <input type="radio" id="label-3" value="on_cash" checked name="payment_type"><label for="label-3">Cash on Delivery</label>
+                      </div>
+                  </div>
+
+                  <div class="col-xs-12 cart-box">
+                      <p><strong>NOTE :</strong> Delivery will take place within 2 - 4 business days of order confirmation.</p>
+                  </div>
+                  <!-- <div class="col-xs-12 no-gutter cart-box">
+                      <h6 class="title">Choose Delivery Date &amp; Time </h6>
+                      <div class="col-sm-6 col-md-6 ">
+                        <input type="text" id="delivery_date" Placeholder="yyyy-mm-dd" name="delivery_date" class="input" required="">
+                      </div>
+                      <div class="col-sm-6 col-md-6">
+                          <select class="select" name="delivery_time" id="delivery_time" required="">
+                              <option value="">Select Time</option>
+                              <option value="10am_12pm">10:00 am - 12:00 pm</option>
+                              <option value="12pm_02pm">12:00 pm - 2:00 pm</option>
+                              <option value="02pm_04pm">2:00 pm - 4:00 pm</option>
+                              <option value="04pm_06pm">4:00 pm - 6:00 pm</option>
+                          </select>
+                      </div>
+                  </div> -->
+              </div>
+              <div class="col-sm-4 total-cart">
+                  <div class="col-xs-12 no-gutter cart-price">
+                          <h4 class="title">Summary</h3>
+                          {% for it in plant_details %}
+                            <p class="title">item {{it.plant.name}} : <span><i class="fa fa-inr"></i> {{it.price*it.quantity}}</span></p>
+                          {% endfor %}
+                          {% if booking.is_gift %}
+                            <p class="title" id="gift_wrap_bar">Gift Wrap <span><i class="fa fa-inr"></i> {{25 * plant_details|length}}</span></p>
+                          {% endif %}
+                          {% if booking.coupon_discount != 0 %}
+                            <p class="title" id="discount_bar">Coupon Discount <span>-&nbsp;<i class="fa fa-inr"></i>&nbsp; <span id="discount_bar_price">{{booking.coupon_discount}}</span></span></p>
+                          {% endif %}
+                          {% if booking.delivery_charge != 0 %}
+                            <p class="title" id="delivery_bar">Dilivery Charge <span><i class="fa fa-inr"></i>&nbsp; <span>{{booking.delivery_charge}}</span></span></p>
+                          {% endif %}
+
+                  </div>
+                  <div class="col-xs-12 no-gutter cart-price">
+                          <p class="title">Total : <span><i class="fa fa-inr"></i> {{booking.amount}}</span></p>
+                  </div>
+                  <div class="continue col-xs-12 text-center">
+                      <!-- <a href="{{url('my-orders')}}" onclick="payment()" class="button">Pay Now <i class="fa fa-arrow-right"></i></a> -->
+                      <button type="submit" id="btnSubmit" class="button" onclick="ga('send', 'event', 'Button','‘Click', 'Pay_Now_Button_Clicked');">PLACE ORDER<i class="fa fa-arrow-right"></i></button>
+                  </div>
+              </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</section>
+    <!--payment section content end-->
+</div>
+
+<style>
+     @media only screen and (max-width:768px){
+    .top-footer{
+        display: none;
+    }
+    }
+
+     @media only screen and (min-width:768px){
+    #navbar{
+       visibility: hidden !important;
+    }
+    }
+
+</style>
+
+{% endblock %}
+{% block custome_script %}
+<script type="text/javascript" src="{{ static('web/js/datepicker.js') }}"></script>
+<script>
+
+$(function(){
+    $('#delivery_date').prop('min', function(){
+        return new Date().toJSON().split('T')[0];
+    });
+});
+$('#delivery_date').datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true,
+			yearRange: "-0:+100",
+			minDate: 0,
+			onSelect:  function(dateText, inst) {
+         		$(this).attr('value',dateText);
+			}
+		});
+
+$('#PaymentForm').submit(function(){
+  $("#btnSubmit").attr("disabled", true);
+})
+</script>
+{% endblock %}
