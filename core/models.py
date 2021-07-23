@@ -260,7 +260,7 @@ class Plants(Base):
     selling_price=models.PositiveIntegerField(default=0)
     nutritional_value = models.CharField(max_length=100,null = True,blank=True, default=None)
     category = models.ManyToManyField(Category)
-    giftcategory = models.ManyToManyField(GiftingCategory)
+    giftcategory = models.ForeignKey(GiftingCategory,default="")
     price_category = models.ForeignKey(PriceCategory)
     images = GenericRelation(Images)
     about = models.TextField(max_length=2500,null = True, default=None)
@@ -473,7 +473,10 @@ class  Booking(Base):
     shipping_longitude = models.FloatField(default=0.0)
     delivery_charge=models.PositiveIntegerField(default=0)
     def __unicode__(self):
-        return '{}'.format(self.id)
+        order_id = "SO%(name)s%(date)s"%{"name":self.id,'date':date.today()}
+        print("ORDER ID --------------->",order_id)
+        print("Booking ID ------------------->",order_id)
+        return '{}'.format(order_id)
     class Meta:
         verbose_name = 'Booking'
         verbose_name_plural = 'Booking'
@@ -518,7 +521,6 @@ class Review(Base):
         verbose_name_plural = 'Review'
 
 
-import pdb
 
 class OrderDetails(Base):
     """
@@ -526,14 +528,14 @@ class OrderDetails(Base):
     """
     vendor = models.ForeignKey(User,blank=True,null=True,default=None,on_delete=models.SET_NULL)   # assign by admin
     order =  models.ForeignKey(Booking,on_delete=models.CASCADE)
-    # pdb.set_trace()
+    
     plant = models.ForeignKey(Plants)
     quantity = models.PositiveIntegerField()
     status = models.CharField(max_length=50,choices=STATUS_CHOICE, default='in_process')
     vendor_ids = models.CharField(max_length=500,blank=True,null=True,default='')
     images = GenericRelation(Images)
     def __unicode__(self):
-        return u'%s order id %s' % (self.order.user.username, self.order.id)
+        return u'%s order id %s' % (self.order.user.username,self.order.id)
     class Meta:
         verbose_name = 'Order Detail'
         verbose_name_plural = 'Order Details'

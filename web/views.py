@@ -196,16 +196,18 @@ def ServeGifting(request,slug):
     print("Gifting Category------------->",category)
     context['category'] = category
     context['giftcategory'] = GiftingCategory.objects.all().filter(gifting_type=category)
-    return render(request, 'web/gifting.html.j2',context)
+    return context
 
 
 
 def ServeGiftingCategoryProduct(request,slug):
     print("Product Slug------------------>",slug)
+  
     context = getAllContext(request)
     category = GiftingCategory.objects.get(slug=slug)
     context['category'] = category
-    context['giftproduct'] = GiftingCategoryProduct.objects.all().filter(giftcategory=category)
+    context['giftproduct'] = Plants.objects.filter(giftcategory=category)
+    print("GIFT PRODUCT --------->",context['giftproduct'])
     print("Gifting Category------------->",category)
 
     return render(request, 'web/giftproduct.html.j2',context)
@@ -287,6 +289,7 @@ def ServePlant(request,slug):
         context['title'] = 'Buy '+plant.name
     context['meta_desc'] = plant.meta_description
     context['meta_keyword'] = plant.meta_keyword
+    
     context['plantQuestionAnswer'] = PlantQuestionAnswer.objects.filter(plant = context['plant'])
     context['reviews'] = Review.objects.filter(plant = context['plant'], status='approved')
     context['plants'] = Plants.objects.filter(active=True,category__in=plant.category.all()).distinct()[:10]
@@ -1262,3 +1265,14 @@ def error_500_page(request, **kwargs):
     context['meta_desc'] = 'something wrong'
     context['meta_keyword'] = ''
     return render(request, "web/500.html.j2", context,status=500)
+
+
+
+
+def RefundandCancellation(request):
+    """serve About us page"""
+    context = getAllContext(request)
+    context['title'] = 'Know About Team, Founder and Work Ethics of Green Decor'
+    context['meta_desc'] = 'Explore Green Decor - the best online plant nursery based in Delhi. Get answer of questions like what we do, how we do and why you should choose us. Know about the team, founder and work-procedure of Green Decor.'
+    context['meta_keyword'] = ''
+    return render(request, 'web/refund-and-cancellation.html.j2', context)

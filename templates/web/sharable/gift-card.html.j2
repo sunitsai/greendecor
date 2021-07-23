@@ -1,7 +1,7 @@
 <div class="col-md-3">
   <div class="card product-card" style="height:309px">
       <div class="slider-image">
-        <a href="{{ url('plant_details', args=[plant.slug]) }}">
+        <a href="{{ url('gifting_product', args=[plant.slug]) }}">
           {% if plant.thumbnail%}
             <img src="/media/{{plant.thumbnail}}" alt="{{plant.thumbnail.alt}}" title="{{plant.thumbnail.title}}">
           {% else %}

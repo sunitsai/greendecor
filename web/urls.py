@@ -60,6 +60,7 @@ urlpatterns = [
 
     url(r'^dashboard/$', Dashboard,name='dashboard'),
     url(r'^contact-us/$', ContactUs,name='contact-us'),
+    url(r'^refund-cancellation/$', RefundandCancellation,name='refund-cancellation'),
     url(r'^faq/$', Faq,name='faq'),
     url(r'^about-us/$', AboutUs,name='about-us'),
     url(r'^search/$', Search,name='search'),
